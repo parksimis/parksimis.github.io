@@ -2,15 +2,15 @@
 markdown: kramdown
 highlighter: rouge
 paginate: 100 # it will paginate after this number
-language: 'en-uk'
+language: 'ko-kr'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /jasper2/
+baseurl: /
 
 # Website info
-title: Ghost
-description: The professional publishing platform
+title: 선익 기술블로그
+description: 선익이의 기술블로그
 cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
@@ -22,8 +22,8 @@ navigation: True # show the navbar links
 subscribers: True # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
-twitter: tryghost # replace by your username
-facebook: ghost # replace by your username
+twitter: '' # replace by your username
+facebook: parksimis # replace by your username
 
 # Disqus
 disqus: False
@@ -67,13 +67,15 @@ feed:
 # or "master" otherwise
 safe: False
 lsi: False
-username: jekyllt
-repo: jasper2
+username: SeonIk Park
+repo: parksimis
 branch: master
 relative_source: ../jasper2/
 destination: ../jasper2-pages/
-production_url:  https://jekyllt.github.io/jasper2/
-source_url:  https://github.com/jekyllt/jasper2/
+production_url:  https://parksimis.github.io/
+source_url:  https://github.com/parksimis/parksimis.github.io/
+
+
 
 exclude:
   - assets/css
