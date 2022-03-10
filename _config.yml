@@ -22,8 +22,11 @@ navigation: True # show the navbar links
 subscribers: True # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
-twitter: '' # replace by your username
-facebook: parksimis # replace by your username
+instagram: park_si95 # replace by your username
+likedin: seonik-park-a33163207
+email: parksimis@gmail.com
+github: parksimis
+
 
 # Disqus
 disqus: False
