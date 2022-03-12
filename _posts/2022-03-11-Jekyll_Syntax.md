@@ -18,7 +18,7 @@
 <br>
 * 실제 설치는 아직 안했으므로, gem을 이용해 rouge를 설치해줘야 함.
 * Ruby 실행 후 해당 블로그 폴더로 이동 아래 코드 입력
-```commandline
+```powershell
 gem install rouge
 ```
 ![Rouge 설정](assets/images/20220310_02.png)
@@ -27,23 +27,24 @@ gem install rouge
 
 ### - 스타일 확인하기
 * `rougify help style` 명령어를 통해 rouge에서 제공하는 code snippet의 스타일을 확인할 수 있다.
-```commandline
+```powershell
 available themes:
-  base16, base16.dark, base16.light, base16.monokai, base16.monokai.dark, base16.monokai.light, base16.solarized, base16.solarized.dark, base16.solarized.light, bw, colorful, github, gruvbox, gruvbox.dark, gruvbox.light, igorpro, magritte, molokai, monokai, monokai.sublime, pastie, thankful_eyes, tulip
+  base16, base16.dark, base16.light, base16.monokai, base16.monokai.dark, base16.monokai.light, base16.solarized, base16.solarized.dark, base16.solarized.light, 
+  bw, colorful, github, gruvbox, gruvbox.dark, gruvbox.light, igorpro, magritte, molokai, monokai, monokai.sublime, pastie, thankful_eyes, tulip
 ```
 * 현재 rouge는 위와 같은 스타일들을 제공함.
   * 각 테마들을 미리보기하고 싶으면 [홈페이지](https://spsarolkar.github.io/rouge-theme-preview/)에서 확인 가능
 * 필자는 `monokai.sublime`을 사용하기로 함.
 
 ### - 스타일시트 생성하기
-```commandline
+```powershell
 rougify style monokai.sublime > assets/css/syntax.css
 ```
 * 위의 명령어로 "assets/css/syntax.css" 위치에 monokai.sublime의 css 파일을 생성할 수 있음.(기존에 있는 경우 덮어쓰기 됨)
 
 ### - 스타일 적용하기
 * 스타일을 적용하기 위해 `_layouts/default.html` 파일에 해당 css 파일 링크를 연결해주어야 함.
-```commandline
+```powershell
 <!-- Styles'n'Scripts -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.edited.css" />
@@ -51,3 +52,30 @@ rougify style monokai.sublime > assets/css/syntax.css
     <!-- highlight.js -->
 ```
 * 해당 파일에 syntax.css를 연결해주어야 함.
+
+
+## 2. 오류 해결
+* 해당 post를 테스트하려고 실행 명령어를 입력한 결과 아래와 같은 오류가 발생했다. <br>
+
+```ruby
+Liquid Exception: Syntax Error in tag 'highlight' while parsing the following markup: Valid syntax: highlight <lang> [linenos] in C:/Users/WU736BV/Desktop/parksimis.github.io/_posts/2022-03-11-Jekyll_Syntax.md
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/jekyll-3.9.0/lib/jekyll/tags/highlight.rb:21:in `initialize': Syntax Error in tag 'highlight' while parsing the following markup: (SyntaxError)
+
+Valid syntax: highlight <lang> [linenos]
+     <중략>
+
+```
+
+* 엄청난 삽질 끝에 위에 템플릿 태그로 인한 오류인 것을 알게 되었다.
+* code block 처리하더라도 템플릿 태그로 인식하는 것 같다.
+* 이 경우 앞에 `\` 처리를 해주자.
+
+
+## 3. 마무리
+* Rouge를 설치하여 syntax highlight를 변경하는 방법을 학습하였다.
+* 과정은 순탄했으나, 사소한 오류 하나로 오랜 삽질을 경험했다.
+  * 그래도 확실하게 배운 것 같아서 기분이 좋다.
+
+### - 참고 사이트
+* [moon9342님 Gitblog - Rouge 이용 가이드](https://moon9342.github.io/jekyll-rouge)
+* [Syntax 테마 설정](https://hard-carry.com/how-to-change-syntax-highlighter-in-jekyll/)
