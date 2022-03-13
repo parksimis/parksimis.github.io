@@ -27,11 +27,12 @@ gem install rouge
 
 ### - 스타일 확인하기
 * `rougify help style` 명령어를 통해 rouge에서 제공하는 code snippet의 스타일을 확인할 수 있다.
-```powershell
+* 
+~~~powershell
 available themes:
   base16, base16.dark, base16.light, base16.monokai, base16.monokai.dark, base16.monokai.light, base16.solarized, base16.solarized.dark, base16.solarized.light, 
   bw, colorful, github, gruvbox, gruvbox.dark, gruvbox.light, igorpro, magritte, molokai, monokai, monokai.sublime, pastie, thankful_eyes, tulip
-```
+~~~
 * 현재 rouge는 위와 같은 스타일들을 제공함.
   * 각 테마들을 미리보기하고 싶으면 [홈페이지](https://spsarolkar.github.io/rouge-theme-preview/)에서 확인 가능
 * 필자는 `monokai.sublime`을 사용하기로 함.
