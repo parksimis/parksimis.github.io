@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-14T14:51:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">선익 기술블로그</title><subtitle>선익 기술블로그</subtitle><entry><title type="html">Jekyll_syntax</title><link href="http://localhost:4000/Jekyll_Syntax" rel="alternate" type="text/html" title="Jekyll_syntax" /><published>2022-03-11T00:00:00+09:00</published><updated>2022-03-11T00:00:00+09:00</updated><id>http://localhost:4000/Jekyll_Syntax</id><content type="html" xml:base="http://localhost:4000/Jekyll_Syntax">&lt;h1 id=&quot;--github-blog-시작기-2&quot;&gt;- Github Blog 시작기 2&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-syntax-highlighting&quot;&gt;1. Syntax Highlighting&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;코드 가독성과 깔끔한 Code block을 위하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rouge&lt;/code&gt;의 syntax-highlighter를 설치 및 사용하고자 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-1-rouge란&quot;&gt;1-1) rouge란&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rouge-ruby/rouge&quot;&gt;Rouge-ruby Repo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Rouge는 pure Ruby syntax highlighter이다.&lt;/li&gt;
+  &lt;li&gt;Rouge는 가장 대표적으로 사용되는 Ruby 라이브러리임.
+    &lt;ul&gt;
+      &lt;li&gt;Jekyll에서는 기본적인 syntax 하이라이터로 사용되고, 기본적으로 Rouge는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\{\% highlight \%\}&lt;/code&gt; 템플릿 태그에 wrapping하여 사용함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jekyll은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rouge&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pygments&lt;/code&gt; 두 가지의 Syntax Highlighter를 제공했었는데, Jekyll 3 이후부터 Pygments는 지원하지 않음.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers&quot;&gt;홈페이지&lt;/a&gt;를 통해 지원 언어 목록 확인 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-2-rouge-설치&quot;&gt;1-2) rouge 설치&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;을 확인해보면 highlighter가 rouge로 설정이 잡혀있음. 
+&lt;br /&gt;
+&lt;img src=&quot;assets/images/20220310_01.png&quot; alt=&quot;Rouge 설정&quot; /&gt;
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;실제 설치는 아직 안했으므로, gem을 이용해 rouge를 설치해줘야 함.&lt;/li&gt;
+  &lt;li&gt;Ruby 실행 후 해당 블로그 폴더로 이동 아래 코드 입력
+    &lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rouge&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;assets/images/20220310_02.png&quot; alt=&quot;Rouge 설정&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위와 같은 결과 화면이 나오면 설치 성공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--스타일-확인하기&quot;&gt;- 스타일 확인하기&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rougify help style&lt;/code&gt; 명령어를 통해 rouge에서 제공하는 code snippet의 스타일을 확인할 수 있다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;available&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;themes:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.monokai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.monokai.dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.monokai.light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.solarized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.solarized.dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.solarized.light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gruvbox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gruvbox.dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gruvbox.light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;igorpro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;magritte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;molokai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;monokai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;monokai.sublime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pastie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;thankful_eyes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tulip&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;현재 rouge는 위와 같은 스타일들을 제공함.
+    &lt;ul&gt;
+      &lt;li&gt;각 테마들을 미리보기하고 싶으면 &lt;a href=&quot;https://spsarolkar.github.io/rouge-theme-preview/&quot;&gt;홈페이지&lt;/a&gt;에서 확인 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;필자는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;monokai.sublime&lt;/code&gt;을 사용하기로 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--스타일시트-생성하기&quot;&gt;- 스타일시트 생성하기&lt;/h3&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;rougify&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;monokai.sublime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assets/css/syntax.css&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;위의 명령어로 “assets/css/syntax.css” 위치에 monokai.sublime의 css 파일을 생성할 수 있음.(기존에 있는 경우 덮어쓰기 됨)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--스타일-적용하기&quot;&gt;- 스타일 적용하기&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;스타일을 적용하기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/default.html&lt;/code&gt; 파일에 해당 css 파일 링크를 연결해주어야 함.
+    &lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Styles&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'n'&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Scripts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/assets/built/screen.css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/assets/built/screen.edited.css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/assets/built/syntax.css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;highlight.js&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;해당 파일에 syntax.css를 연결해주어야 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-오류-해결&quot;&gt;2. 오류 해결&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;해당 post를 테스트하려고 실행 명령어를 입력한 결과 아래와 같은 오류가 발생했다. &lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Liquid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Syntax&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Error&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'highlight'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parsing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;following&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;markup: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Valid&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;syntax: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;highlight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linenos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;WU736BV&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Desktop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parksimis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_posts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2022&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Jekyll_Syntax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;md&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ruby26&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x64&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;highlight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:in&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`initialize': Syntax Error in tag 'highlight' while parsing the following markup: (SyntaxError)
+
+Valid syntax: highlight &amp;lt;lang&amp;gt; [linenos]
+     &amp;lt;중략&amp;gt;
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;엄청난 삽질 끝에 위에 템플릿 태그로 인한 오류인 것을 알게 되었다.&lt;/li&gt;
+  &lt;li&gt;code block 처리하더라도 템플릿 태그로 인식하는 것 같다.&lt;/li&gt;
+  &lt;li&gt;이 경우 앞에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\&lt;/code&gt; 처리를 해주자.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-마무리&quot;&gt;3. 마무리&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Rouge를 설치하여 syntax highlight를 변경하는 방법을 학습하였다.&lt;/li&gt;
+  &lt;li&gt;과정은 순탄했으나, 사소한 오류 하나로 오랜 삽질을 경험했다.
+    &lt;ul&gt;
+      &lt;li&gt;그래도 확실하게 배운 것 같아서 기분이 좋다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--참고-사이트&quot;&gt;- 참고 사이트&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://moon9342.github.io/jekyll-rouge&quot;&gt;moon9342님 Gitblog - Rouge 이용 가이드&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hard-carry.com/how-to-change-syntax-highlighter-in-jekyll/&quot;&gt;Syntax 테마 설정&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">- Github Blog 시작기 2</summary></entry><entry><title type="html">Jekyll</title><link href="http://localhost:4000/Jekyll" rel="alternate" type="text/html" title="Jekyll" /><published>2022-03-07T00:00:00+09:00</published><updated>2022-03-07T00:00:00+09:00</updated><id>http://localhost:4000/Jekyll</id><content type="html" xml:base="http://localhost:4000/Jekyll">&lt;h1 id=&quot;--github-blog-시작기-1&quot;&gt;- Github Blog 시작기 1&lt;/h1&gt;
+&lt;h1 id=&quot;1-jekyll이란&quot;&gt;1. Jekyll이란?&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll은 Templates, partials, liquid code, markdown 등과 같은 동적 구성 요소에서 정적 웹 사이트를 구축하는 데 사용되는 Ruby 기반의 Parsing Engine
+    &lt;ul&gt;
+      &lt;li&gt;Jekyll은 Parsing Engine으로 컨텐츠 제공하지 않으며, 템플릿이나 디자인 요소도 없음.(직접 만들어야 함)&lt;/li&gt;
+      &lt;li&gt;Jekyll은 정적 웹사이트를 제공함. -&amp;gt; 동적 X
+        &lt;ul&gt;
+          &lt;li&gt;각 요청에 대해 컨텐츠, 템플릿 및 태그를 구문 분석 작업을 미리 한 번 수행하고 전체 웹사이트를 폴더에 캐시하여 정적으로 제공함.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Github pages에서 무료로 호스팅 할 수 있음.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-jekyll-설치-방법&quot;&gt;2. Jekyll 설치 방법&lt;/h2&gt;
+&lt;h2 id=&quot;1-ruby-설치&quot;&gt;1) Ruby 설치&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll은 Ruby 기반이므로 Ruby 개발환경이 필요함.&lt;/li&gt;
+  &lt;li&gt;Ruby는 각 운영체제별로 설치 방법이 다르므로 주의&lt;/li&gt;
+  &lt;li&gt;필자는 Windows로 Window 설치 방법을 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-1-설치-파일-다운로드&quot;&gt;1-1) 설치 파일 다운로드&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;윈도우 OS의 경우 Ruby와 Devkit(개발툴킷)을 별도로 설치해줘야하므로, &lt;a href=&quot;https://rubyinstaller.org/downloads/&quot;&gt;Ruby 설치 홈페이지&lt;/a&gt; 에서 Devkit이 포함된 버전 다운로드
+    &lt;ul&gt;
+      &lt;li&gt;필자의 경우 현 시점에서 가장 최신 버전인 Ruby+Devkit3.1.1-1(x64) 다운로드&lt;/li&gt;
+      &lt;li&gt;해당 설치 파일 실행 후 Next만 눌러 모두 Default 값으로 설치하면 됨.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-2-기본-세팅&quot;&gt;1-2) 기본 세팅&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;아래 그림과 같이 윈도우 시작 창에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Start Command Prompt with Ruby&lt;/code&gt;를 실행&lt;br /&gt;
+&lt;img src=&quot;assets/images/20220307_01.png&quot; alt=&quot;Start Command Prompt with Ruby&quot; /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;실행 후 가장 먼저 프롬프트에서 인코딩을 부여하기 위한 명령어로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chcp 65001&lt;/code&gt; 실행
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;Active code page: 65001
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;위와 같은 결과가 나오면 완료b&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundler&lt;/code&gt; 설치하기
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;gem install bundler
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위의 code를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundler&lt;/code&gt;를 설치할 수 있음.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;bundler는 Ruby App이 사용하는 gem의 dependecy를 관리하여 Ruby App 개발을 위한 일관된 환경을 제공할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;실행
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위 명령어로 Jekyll 실행이 가능함 &lt;br /&gt;
+&lt;img src=&quot;assets/images/20220307_02.png&quot; alt=&quot;bundle exec jekyll serve&quot; /&gt; &lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;이와 같은 메시지가 나오면 정상 작동 완료&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;127.0.0.1:4000/jasper2//&lt;/code&gt;로 접속하면 테마 페이지 확인 가능&lt;/li&gt;
+      &lt;li&gt;터미널에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl + C&lt;/code&gt;를 누르면 Terminate 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-3-추가-설치&quot;&gt;1-3) 추가 설치&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;필자의 경우 현 시점 가장 최신 환경인 Ruby 3.x 버전으로 설치하여 실행시 오류가 발생함.&lt;/li&gt;
+  &lt;li&gt;최신 버전으로 Ruby를 설치하여 실행하시는 분들을 위해 아래에 발생한 오류와 해결 방법을 공유합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;error-1-could-not-locate-gemfile&quot;&gt;Error 1) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Could not locate Gemfile&lt;/code&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;현 Theme에서는 Gemfile이 포함되어 있어 오류 발생하지 않았지만, 이전 Theme에서 Gemfile이 포함되지 않아 오류가 발생한 경우가 있었음.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;--해결&quot;&gt;- 해결&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;bundle 관련 명령문을 실행했을 때, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Could not locate Gemfile&lt;/code&gt; 와 같은 결과가 나오고 설치가 안된다면 Gemfile init을 해주어야 함.
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;bundle init
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위와 같은 명령문으로 GEMFILE 생성 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;error-2-cannot-load-such-file----webrick&quot;&gt;Error 2) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cannot load such file -- webrick&lt;/code&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll 실행 후에 가장 먼저 맞닥뜨린 오류
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve/servlet.rb:3:in `require': cannot load such file -- webrick (LoadError)
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve/servlet.rb:3:in `&amp;lt;top (required)&amp;gt;'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:184:in `require_relative'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:184:in `setup'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:102:in `process'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:93:in `block in start'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:93:in `each'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:93:in `start'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:75:in `block (2 levels) in init_with_program'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `block in execute'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `each'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `execute'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary/program.rb:42:in `go'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary.rb:19:in `program'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/exe/jekyll:15:in `&amp;lt;top (required)&amp;gt;'
+      from C:/Ruby31-x64/bin/jekyll:25:in `load'
+      from C:/Ruby31-x64/bin/jekyll:25:in `&amp;lt;main&amp;gt;'
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위와 같은 오류가 발생하여 당황했지만, 읽어보니 LoadError로 Webrick을 로드할 수 없다는 내용이었음.
+    &lt;ul&gt;
+      &lt;li&gt;Ruby 3.x 버전부터 webrick이 빠진 채 설치된다고 함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;--해결-1&quot;&gt;- 해결&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;bundle add webrick
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+  &lt;li&gt;위와 같은 명령어로 webrick을 추가 설치 해줘야지 사용 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;error-3-cannot-load-kram-parser-gfm&quot;&gt;Error 3) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cannot load kram-parser-gfm&lt;/code&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Error 2와 동일한 이유로 kram-parser-gfm도 추가 설치해주어야 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;--해결-2&quot;&gt;- 해결&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;bundle add kramdown-parser-gfm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+  &lt;li&gt;위와 같은 명령어로 kramdown-parser-gfm을 추가 설치하여 해결&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;--기타&quot;&gt;- 기타&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;위와 같이 추가 라이브러리를 설치하고 Gemfile을 확인하면 해당 라이브러리들이 아래와 같이 자동으로 추가되는 것을 알 수 있다.
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;gem &quot;webrick&quot;, &quot;~&amp;gt; 1.7&quot;
+gem &quot;kramdown-parser-gfm&quot;, &quot;~&amp;gt; 1.1&quot;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;해당 Gemfile을 통해 Dependency를 관리할 수 있다.&lt;/li&gt;
+  &lt;li&gt;다른 폴더에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;을 통해 Gemfile의 내용을 자동으로 설치할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-마무리&quot;&gt;3. 마무리&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Github Blog 첫 도전을 위해 Jekyll과 Ruby 설치에 대해 공부하였다.&lt;/li&gt;
+  &lt;li&gt;아직 완벽하게 개념이 정립되지는 않지만, 지속적으로 관리하며 블로그를 다듬어봐야겠다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--참고-사이트&quot;&gt;- 참고 사이트&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://martianlee.github.io/posts/jekyll-erro/&quot;&gt;Jekyll Error&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://moon9342.github.io/jekyll-start&quot;&gt;Jekyll Setting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">- Github Blog 시작기 1 1. Jekyll이란? Jekyll은 Templates, partials, liquid code, markdown 등과 같은 동적 구성 요소에서 정적 웹 사이트를 구축하는 데 사용되는 Ruby 기반의 Parsing Engine Jekyll은 Parsing Engine으로 컨텐츠 제공하지 않으며, 템플릿이나 디자인 요소도 없음.(직접 만들어야 함) Jekyll은 정적 웹사이트를 제공함. -&amp;gt; 동적 X 각 요청에 대해 컨텐츠, 템플릿 및 태그를 구문 분석 작업을 미리 한 번 수행하고 전체 웹사이트를 폴더에 캐시하여 정적으로 제공함. Github pages에서 무료로 호스팅 할 수 있음.</summary></entry></feed>
