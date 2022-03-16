@@ -1,4 +1,15 @@
-# - Github Blog 시작기 2
+---
+layout: post
+current: post
+cover:  assets/built/images/locked.jpg
+navigation: True
+title: Github Blog 시작기 2 - syntax 
+date: 2021-03-16 16:40:00
+tags: [Jeykll]
+class: post-template
+subclass: 'post tag-Jekyll'
+author: Park Seon Ik
+---
 
 ## 1. Syntax Highlighting
 * 코드 가독성과 깔끔한 Code block을 위하여 `rouge`의 syntax-highlighter를 설치 및 사용하고자 한다.

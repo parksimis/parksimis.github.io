@@ -51,7 +51,7 @@ title: 선익 기술블로그
 description: 선익 기술블로그
 # blog home에 표시될 blog에 대한 전반적인 설명.
 
-cover: assets/built/images/blog-cover.png
+cover: assets/built/images/blog-cover.jpg
 # blog home에 표시될 blog cover image.
 
 logo:
@@ -119,9 +119,10 @@ repo: parksimis.github.io
 branch: master
 # 사용할 branch명
 
-relative_source:
 
 destination: ./output/
+
+
 # compile된 결과가 생성되는 폴더
 # 이 폴더안의 내용이 우리가 운영하는 블로그 내용이 컴파일되서 들어간다.
 # 이 폴더안의 내용을 github repository(https://username.github.io)에 push
@@ -145,9 +146,9 @@ exclude:
   - assets/images
   - _posts/angular
   - _posts/et-cetera
-  - _posts/python
+#  - _posts/python
   - _posts/typescript
-#  - _posts/jekyll
+#  - _posts/Jekyll
   - _posts/iot
   - _posts/r
   - _posts/economy
