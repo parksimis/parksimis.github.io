@@ -1,9 +1,5 @@
-jekyll :
-  name: jekyll
-  description: False
-  cover: assets/built/images/speeches.jpg
-python :
-  name: python
+Jekyll :
+  name: Jekyll
   description: False
   cover: assets/built/images/speeches.jpg
 blueprism :
