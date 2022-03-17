@@ -69,15 +69,16 @@ author: Park Seon Ik
 * `_includes` 폴더에는 곻통적으로 사용가능한 컴포넌트들을 만들어 놓고 page에 삽입하여 사용할 수 있다.
 * `include` tag를 사용해 `_includes` 폴더에 저장된 다른 파일의 콘텐츠를 포함할 수 있다.
 ```html
-{\% include footer.html \%}
+\{\% include footer.html \%\}
 ```
 * 원하는 html 페이지에서 위의 코드를 통해 `_includes` 폴더의 `footer.html`을 찾아 내용을 삽입할 수 있다.
 
 
 #### 2-1) 참조 파일 Includes
 * `include_relative` 태그를 사용하여 현재 파일과 관련된 참조 파일을 불러와 사용할 수 있다.
+
 ```html
-{\% include_relative somedir/footer.html \%}
+\{\% include_relative somedir/footer.html \%\}
 ```
 * 위의 코드를 통해 `_includes`폴더 이외의 폴더에 있는 html 파일을 불러와 사용할 수 있다.
   * 그러나 참조 위치는 해당 파일의 상대적이므로 주의해야 한다.
@@ -97,6 +98,7 @@ author: Park Seon Ik
 #### Ex. Author 정보 추가
 * 예를 들어 페이지에 반복되어 사용될 Author의 정보를 포함하고 싶다면 아래의 루트에 해당 내용을 추가할 수 있다.
 * `_data/authors.yml`
+
 ```yaml
 parksimis :
   name: Park Seon Ik      
@@ -111,17 +113,18 @@ examplemember:
 * 위의 데이터는 `site.data.authors`로 액세스가 가능함.
   * 파일의 이름이 변수 이름을 결정하기 때문에, 동일한 디렉토리에 같은 이름의 다른 확장자가 있지 않도록 조심해야 함.
   * 실제 필자의 `post-card.html`에서 사용되는 코드
+
 ```html
- {\% for author in site.data.authors \%}
-    {\% if author[1].username == post.author \%}
-        {\% if author[1].picture \%}
+ \{\% for author in site.data.authors \%\}
+    \{\% if author[1].username == post.author \%\}
+        \{\% if author[1].picture \%\}
         <img class="author-profile-image" src="{{ site.baseurl }}{{ author[1].picture }}" alt="{{ author[1].name }}" />
-        {\% endif \%}
+        \{\% endif \%\}
         <span class="post-card-author">
             <a href="{{ site.baseurl }}author/{{ post.author }}/">{{ author[1].name }}</a>
         </span>
-    {\% endif \%}
-{\% endfor \%}
+    \{\% endif \%\}
+\{\% endfor \%\}
 ```
 
 ### 3-2) 하위 폴더
@@ -133,6 +136,7 @@ examplemember:
   * Github 조직이 `orgs` 폴더 아래의 파일에서 어떻게 별도로 정의할 수 있는지 하위 폴더로 진행하는 예시이다.
 
 * 1) `_data/orgs/jekyll.yml`
+
 ```yaml
 username: jekyll
 name: Jekyll
@@ -145,6 +149,7 @@ members:
 ```
 
 * 2) `_data/orgs/doeorg.yml`
+
 ```yaml
 username: doeorg
 name: Doe Org
@@ -156,15 +161,15 @@ members:
 * 위와 같은 경우 `site.data.orgs`를 통해 조직에, 각 파일 이름으로 각각에 액세스할 수 있다.
 ```html
 <ul>
-{\% for org_hash in site.data.orgs \%}
-{\% assign org = org_hash[1] \%}
+\{\% for org_hash in site.data.orgs \%\}
+\{\% assign org = org_hash[1] \%\}
   <li>
     <a href="https://github.com/{{ org.username }}">
       {{ org.name }}
     </a>
     ({{ org.members | size }} members)
   </li>
-{\% endfor \%}
+\{\% endfor \%\}
 </ul>
 ```
 
