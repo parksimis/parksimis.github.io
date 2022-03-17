@@ -14,7 +14,7 @@ author: Park Seon Ik
 ## - Directory Structure(디렉토리 구조)
 * Jekyll의 디렉토리 구조는 아래와 같이 구성된다.
   * [Jekyll documentation](https://jekyllrb.com/docs/structure/) 의 내용을 해석하여 필자가 재구성함.
-
+  
 * 기본 Jekyll 실행 시 Directory Structure
 ```posh
 .
@@ -74,7 +74,6 @@ author: Park Seon Ik
 ```
 {% endraw %}
 * 원하는 html 페이지에서 위의 코드를 통해 `_includes` 폴더의 `footer.html`을 찾아 내용을 삽입할 수 있다.
-
 
 #### 2-1) 참조 파일 Includes
 * `include_relative` 태그를 사용하여 현재 파일과 관련된 참조 파일을 불러와 사용할 수 있다.
