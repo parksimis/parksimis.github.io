@@ -18,21 +18,21 @@ author: Park Seon Ik
 * [Rouge-ruby Repo](https://github.com/rouge-ruby/rouge)
 * Rouge는 pure Ruby syntax highlighter이다.
 * Rouge는 가장 대표적으로 사용되는 Ruby 라이브러리임.
-  * Jekyll에서는 기본적인 syntax 하이라이터로 사용되고, 기본적으로 Rouge는 `\{\% highlight \%\}` 템플릿 태그에 wrapping하여 사용함.
+  * Jekyll에서는 기본적인 syntax 하이라이터로 사용되고, 기본적으로 Rouge는 {% raw %}`{% highlight %}` {% endraw %} 템플릿 태그에 wrapping하여 사용함.
 * Jekyll은 `rouge`와 `pygments` 두 가지의 Syntax Highlighter를 제공했었는데, Jekyll 3 이후부터 Pygments는 지원하지 않음.
 * [홈페이지](https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers)를 통해 지원 언어 목록 확인 가능
 
 ### 1-2) rouge 설치
 * `_config.yml`을 확인해보면 highlighter가 rouge로 설정이 잡혀있음. 
 <br>
-![Rouge 설정](assets/images/20220310_01.png)
+![Rouge 설정](assets/built/images/20220310_01.png)
 <br>
 * 실제 설치는 아직 안했으므로, gem을 이용해 rouge를 설치해줘야 함.
 * Ruby 실행 후 해당 블로그 폴더로 이동 아래 코드 입력
 ```powershell
 gem install rouge
 ```
-![Rouge 설정](assets/images/20220310_02.png)
+![Rouge 설정](assets/built/images/20220310_02.png)
 <br>
 * 위와 같은 결과 화면이 나오면 설치 성공
 
@@ -80,7 +80,7 @@ Valid syntax: highlight <lang> [linenos]
 
 * 엄청난 삽질 끝에 위에 템플릿 태그로 인한 오류인 것을 알게 되었다.
 * code block 처리하더라도 템플릿 태그로 인식하는 것 같다.
-* 이 경우 앞에 `\` 처리를 해주자.
+* 이 경우 앞에 각 코드 시작의 처음과 끝에 `{% raw %}{%{% endraw %} raw {% raw %}%}{% endraw %}` 와 `{% raw %}{%{% endraw %} endraw {% raw %}%}{% endraw %}`의 liquid tag를 붙여주어 해당 내용을 파싱하지 않도록 처리해주어야 한다.
 
 
 ## 3. 마무리
