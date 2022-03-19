@@ -4,7 +4,7 @@ parksimis :
   url_full:             # Homepage url
   url:
   bio: Ernst&Young Korea Delivery Service
-  picture: assets/built/images/lewis.jpeg  # author image
+  picture: assets/built/images/profile.jpg  # author image
   facebook:             # facebook ID
   twitter:              # twitter ID
   cover: False

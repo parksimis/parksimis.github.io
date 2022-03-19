@@ -1,7 +1,7 @@
 ---
 layout: post
 current: post
-cover:  assets/built/images/locked.jpg
+cover:  assets/built/images/Jekyll_logo.png
 navigation: True
 title: Github Blog 시작기 3 - Directory Structure
 date: 2021-03-16 16:40:00
