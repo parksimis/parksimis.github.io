@@ -3,8 +3,8 @@ layout: post
 current: post
 cover:  assets/built/images/Jekyll_Logo.png
 navigation: True
-title: Github Blog 시작기 3 - Directory Structure
-date: 2021-03-16 16:40:00
+title: Github Blog 시작기 3 - <br> Directory Structure
+date: 2022-03-17
 tags: [Jeykll]
 class: post-template
 subclass: 'post tag-Jekyll'
