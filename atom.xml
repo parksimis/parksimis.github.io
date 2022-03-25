@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> - Articles</title>
+    <description>선익 기술블로그</description>
+    <link>
+    https://parksimis.github.io</link>
+    
+      
+      <item>
+        <title>Github Blog 시작기 5 - &lt;br&gt; Tag와 Categories</title>
+        
+          <description>&lt;h2 id=&quot;--tags-and-categories&quot;&gt;- Tags and Categories&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jeyll은 블로그 포스트의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;categories&lt;/code&gt; 설정이 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+        <link>
+        https://parksimis.github.io/Jekyll_tag</link>
+        <guid isPermaLink="true">https://parksimis.github.io/Jekyll_tag</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Github Blog 시작기 4 - &lt;br&gt; 변수</title>
+        
+          <description>&lt;h2 id=&quot;--변수&quot;&gt;- 변수&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll에서 머리말이 있는 모든 파일은 Jekyll의 처리 대상이 된다. 이후 이러한 각 파일에 대해 Jekyll은 Liquid를 통해 다양한 데이터를 사용가능하게 한다.&lt;/li&gt;
+  &lt;li&gt;아래의 내용은 &lt;a href=&quot;https://jekyllrb.com/docs/variables/&quot;&gt;Jekyll 변수&lt;/a&gt; 에 관한 내용을 해석하여 필자가 재구성하였습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+        <link>
+        https://parksimis.github.io/Jekyll_variables</link>
+        <guid isPermaLink="true">https://parksimis.github.io/Jekyll_variables</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Github Blog 시작기 3 - &lt;br&gt; Directory Structure</title>
+        
+          <description>&lt;h2 id=&quot;--directory-structure디렉토리-구조&quot;&gt;- Directory Structure(디렉토리 구조)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll의 디렉토리 구조는 아래와 같이 구성된다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;Jekyll documentation&lt;/a&gt; 의 내용을 해석하여 필자가 재구성함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기본 Jekyll 실행 시 Directory Structure
+    &lt;div class=&quot;language-posh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config.yml&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_data&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;members.yml&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_drafts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin-with-the-crazy-ideas.md&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on-simplicity-in-technology.md&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;footer.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_layouts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;posts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;2007-10-29-why-every-programmer-should-play-nethack.md&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2009&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04-26-barcamp-boston-4-roundup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;md&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_base.scss&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout.scss&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_site&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;jekyll-cache&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;       &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Cache&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;           &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;jekyll-metadata&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# can also be an 'index.md' with valid front matter&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Thu, 17 Mar 2022 00:00:00 +0000</pubDate>
+        <link>
+        https://parksimis.github.io/Jekyll_directory_structure</link>
+        <guid isPermaLink="true">https://parksimis.github.io/Jekyll_directory_structure</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Github Blog 시작기 2 - &lt;br&gt; syntax</title>
+        
+          <description>&lt;h2 id=&quot;1-syntax-highlighting&quot;&gt;1. Syntax Highlighting&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;코드 가독성과 깔끔한 Code block을 위하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rouge&lt;/code&gt;의 syntax-highlighter를 설치 및 사용하고자 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+        <link>
+        https://parksimis.github.io/Jekyll_Syntax</link>
+        <guid isPermaLink="true">https://parksimis.github.io/Jekyll_Syntax</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Github Blog 시작기 1 - &lt;br&gt; basic</title>
+        
+          <description>&lt;h1 id=&quot;1-jekyll이란&quot;&gt;1. Jekyll이란?&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll은 Templates, partials, liquid code, markdown 등과 같은 동적 구성 요소에서 정적 웹 사이트를 구축하는 데 사용되는 Ruby 기반의 Parsing Engine
+    &lt;ul&gt;
+      &lt;li&gt;Jekyll은 Parsing Engine으로 컨텐츠 제공하지 않으며, 템플릿이나 디자인 요소도 없음.(직접 만들어야 함)&lt;/li&gt;
+      &lt;li&gt;Jekyll은 정적 웹사이트를 제공함. -&amp;gt; 동적 X
+        &lt;ul&gt;
+          &lt;li&gt;각 요청에 대해 컨텐츠, 템플릿 및 태그를 구문 분석 작업을 미리 한 번 수행하고 전체 웹사이트를 폴더에 캐시하여 정적으로 제공함.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Github pages에서 무료로 호스팅 할 수 있음.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
+        <link>
+        https://parksimis.github.io/Jekyll</link>
+        <guid isPermaLink="true">https://parksimis.github.io/Jekyll</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

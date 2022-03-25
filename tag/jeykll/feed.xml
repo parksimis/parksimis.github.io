@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://parksimis.github.io/tag/jeykll/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://parksimis.github.io/" rel="alternate" type="text/html" />
+  <updated>2022-03-25T00:51:24+00:00</updated>
+  <id>https://parksimis.github.io/tag/jeykll/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">선익 기술블로그 | </title>
+  
+
+  
+    <subtitle>선익 기술블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">Github Blog 시작기 5 - Tag와 Categories</title>
+      <link href="https://parksimis.github.io/Jekyll_tag" rel="alternate" type="text/html" title="Github Blog 시작기 5 - &lt;br&gt; Tag와 Categories" />
+      <published>2022-03-22T00:00:00+00:00</published>
+      <updated>2022-03-22T00:00:00+00:00</updated>
+      <id>https://parksimis.github.io/Jekyll_tag</id>
+      <content type="html" xml:base="https://parksimis.github.io/Jekyll_tag">&lt;h2 id=&quot;--tags-and-categories&quot;&gt;- Tags and Categories&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jeyll은 블로그 포스트의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;categories&lt;/code&gt; 설정이 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-tags&quot;&gt;1) Tags&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll에서 각 포스트에 Tag 기능을 추가하는 것은 간단하다.&lt;/li&gt;
+  &lt;li&gt;각 포스트의 첫 부분에는 각 포스트에 대해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yaml&lt;/code&gt;형식으로 메타 데이터 설정이 가능하다.
+    &lt;ul&gt;
+      &lt;li&gt;그곳에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tag&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags&lt;/code&gt; 변수를 추가해주면 된다.
+Jekyll의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags&lt;/code&gt;는 자동적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;whitespace&lt;/code&gt;를 기준으로 split하여 tag 정보를 작성한다.&lt;br /&gt;
+예를 들어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tag : classic hollywood&lt;/code&gt;의 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;classic hollywod&lt;/code&gt; 하나의 단일적인 태그로 생성되지만, &lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags : classic hollywood&lt;/code&gt;의 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[&quot;classic&quot;, &quot;hollywood&quot;]&lt;/code&gt;로 두개의 태그로 처리된다.&lt;/li&gt;
+      &lt;li&gt;아래와 같은 형식으로 각 포스트에 맞는 tag들을 기입해주면 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Jeykll&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jekyll의 각 포스트들은 렌더링되는 HTML 파일에 대한 이름을 메타 데이터의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout&lt;/code&gt; 변수에 정의한다. &lt;br /&gt;
+위의 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt;로 정의되어 있으므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post.html&lt;/code&gt;에 해당 포스트에 대한 내용이 담긴다. &lt;br /&gt;
+따라서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layout&lt;/code&gt; 디렉토리 안의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post.html&lt;/code&gt; 파일의 내용을 수정해야 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tag&lt;/code&gt;의 기능을 추가할 수 있다. &lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;--tag-변수-사용하기&quot;&gt;- Tag 변수 사용하기&lt;/h4&gt;
+&lt;p&gt;Jekyll은 &lt;a href=&quot;2022-03-21-Jekyll_variables.md&quot;&gt;이전 포스트&lt;/a&gt; 에서 기술했듯이, 사용할 수 있는 전역 변수가 선언되어 있는데, &lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page&lt;/code&gt; 변수 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.tags&lt;/code&gt; 문법으로 각 게시물의 머릿말에 기술되어 있는 태그 목록을 불러와 사용할 수 있다. &lt;br /&gt;
+아래는 실제 현재 블로그의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post.html&lt;/code&gt;에 기술된 코드 내용이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% if page.tags.size &amp;gt; 0 %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;date-divider&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;/&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    {% for tag in page.tags %}
+        {% if forloop.index == page.tags.size %}
+           &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'{{ site.baseurl }}tag/{{ tag | slugify: &quot;latin&quot; }}/'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ tag | upcase }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        {% else %}
+           &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'{{ site.baseurl }}tag/{{ tag | slugify: &quot;latin&quot; }}/'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ tag | upcase }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;,
+        {% endif %}
+    {% endfor %}
+{% endif %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 코드를 살펴보면, tag 사이즈가 0 이상인 경우, page.tags 목록을 loop 돌며, 해당 tag의 이름을 UpperCase로 만들어 a 태그로 만드는 작업을 수행한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-categories&quot;&gt;2) Categories&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;카테고리가 태그와 유사한 점은 다음과 같다.
+    &lt;ul&gt;
+      &lt;li&gt;머릿말에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;category&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;categories&lt;/code&gt; 키를 사용하여 정의될 수 있다.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.categories&lt;/code&gt;로 반복 가능한 Liquid templates로 접근할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;카테고리와 태그의 차이점은 다음과 같다.
+    &lt;ul&gt;
+      &lt;li&gt;태그와 달리 게시물의 카테고리는 게시물의 파일 경로에 의해서도 정의될 수 있다.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_post&lt;/code&gt; 상위에 있는 모든 디렉토리는 카테고리로 인식될 수 있다.&lt;/li&gt;
+      &lt;li&gt;예를 들어, 만약 게시물이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;movies/horror/_posts/2019-05-21-bride-of-chuck.md&lt;/code&gt;의 위치에 있다면, &lt;br /&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;movies&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;horror&lt;/code&gt;는 자동적으로 해당 게시물의 카테고리들로 등록된다.&lt;/li&gt;
+      &lt;li&gt;게시물의 머릿말에 카테고리를 정의하지 않았더라도 자동으로 존재하는 리스트를 추가해준다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;카테고리와 태그의 전형적인 특징은 카테고리는 게시물에 생성된 URL에 통합될 수 있는 반면에 태그는 불가능하다는 것이다. &lt;br /&gt;
+그러므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;category : classic hollywood&lt;/code&gt;인지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;categories : classic hollywood&lt;/code&gt;인지에 따라서 게시물의 URL은 &lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;movies/horror/classic%20hollywood/2019/05/21/bride-of-chucky.html&lt;/code&gt; 거나 &lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;movies/horror/classic/hollywood/2019/05/21/bride-of-chucky.html&lt;/code&gt;이 될 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;참고 사이트
+&lt;a href=&quot;https://jekyllrb.com/docs/posts/#tags-and-categories&quot;&gt;Jekyll Docs - Posts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Park Seon Ik</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Jeykll" />
+      
+
+      
+        <summary type="html">- Tags and Categories Jeyll은 블로그 포스트의 tags와 categories 설정이 가능하다.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">Github Blog 시작기 4 - 변수</title>
+      <link href="https://parksimis.github.io/Jekyll_variables" rel="alternate" type="text/html" title="Github Blog 시작기 4 - &lt;br&gt; 변수" />
+      <published>2022-03-21T00:00:00+00:00</published>
+      <updated>2022-03-21T00:00:00+00:00</updated>
+      <id>https://parksimis.github.io/Jekyll_variables</id>
+      <content type="html" xml:base="https://parksimis.github.io/Jekyll_variables">&lt;h2 id=&quot;--변수&quot;&gt;- 변수&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll에서 머리말이 있는 모든 파일은 Jekyll의 처리 대상이 된다. 이후 이러한 각 파일에 대해 Jekyll은 Liquid를 통해 다양한 데이터를 사용가능하게 한다.&lt;/li&gt;
+  &lt;li&gt;아래의 내용은 &lt;a href=&quot;https://jekyllrb.com/docs/variables/&quot;&gt;Jekyll 변수&lt;/a&gt; 에 관한 내용을 해석하여 필자가 재구성하였습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-global-variables전역-변수&quot;&gt;1) Global Variables(전역 변수)&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;변수&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;의 정보와 사이트 전체적인 구성 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Page 정보와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yaml&lt;/code&gt;의 머릿말과 사용자 정의 변수&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Layout 정보와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yaml&lt;/code&gt;의 머릿말과 그에 작성한 사용자 정의 변수&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;content&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;레이아웃 파일 내에서, 렌더링된 Post의 내용이나 래핑되는 페이지/ Post나 Page 파일에서 정의되지 않는다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginate&lt;/code&gt; 옵션이 세팅된 경우 사용할 수 있는 페이지 관련 변수&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;2-site-variables사이트-변수&quot;&gt;2) Site Variables(사이트 변수)&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;변수&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.time&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; command를 실행시킨 시간&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.pages&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;모든 page의 리스트&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.posts&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;모든 포스트의 시간별 역순의 리스트&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.related_posts&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;만약 처리된 페이지가 포스트라면, 10개까지 관련 포스트들이 포함되어 나옴. &lt;br /&gt; 최근 게시물이 10개까지 default로 나옴 느리지만 고퀄리티인 결과를 보고 싶으면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; 명령어에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--lsi&lt;/code&gt;를 옵션을 추가 &lt;br /&gt; (Github Page에는 해당 옵션 제공 X)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.static_file&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;static files의 목록. 각 파일은 다음의 속성들을 갖는다.&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;path&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;modified_time&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;basename&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;extname&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.html_pages&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.html&lt;/code&gt;로 끝나는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.pages&lt;/code&gt;부분 집합 리스트&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.html_files&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.html&lt;/code&gt;로 끝나는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.static_files&lt;/code&gt;의 부분 집합 리스트&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.collections&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;모든 컬렉션들의 리스트(post 포함)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.data&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data&lt;/code&gt; 디렉토리에 위치한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YAML&lt;/code&gt; 파일에서 로드된 데이터의 목록&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.documents&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;모든 컬렉션의 document들의 목록&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.categories.CATEGORY&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CATEGORY&lt;/code&gt;값을 가지는 모든 post의 리스트&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.tags.TAG&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TAG&lt;/code&gt;값을 가지는 모든 post의 리스트&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.url&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;에서 정의되는 url &lt;br /&gt; 예를 들어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url: https://mysite.com&lt;/code&gt;이 정의되어 있다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.url&lt;/code&gt;로 접근 가능함&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.[CONFIGURATION_DATA]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;명령어나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;에서 정의한 모든 변수들은 사이트 변수들을 통해 사용할 수 있다. &lt;br /&gt; 예를 들어, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foo: bar&lt;/code&gt;로 정의한 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.foo&lt;/code&gt;와 같은 liquid로 접근할 수 있다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-page-variables페이지-변수&quot;&gt;3) Page Variables(페이지 변수)&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;변수&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.content&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;처리 중인 Liquid와 페이지에 따라서 렌더링되거나 또는 렌더링되지 않은 페이지의 내용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.title&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Page의 타이틀&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.excerpt&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;렌더 되지 않은 문서의 발췌 부분&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.url&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;도메인이 없지만, 선행 슬래시가 있는 게시물의 URL &lt;br /&gt; Ex. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2022/03/07/Jekyll.html&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.date&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;게시물이 등록된 시간&lt;br /&gt; 이 값은 각 Post의 머릿말에 새로운 시간을 작성하면 그 값으로 재정의된다. &lt;br /&gt; &lt;a href=&quot;http://strftime.net/&quot;&gt;strftime&lt;/a&gt;과 문법이 동일&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.id&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;컬렉션 또는 게시물의 문서의 고유한 식별자(RSS 피드를 사용할 때 유용)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.categories&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;해당 게시물이 속해있는 카테고리의 리스트. 카테고리는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 디렉토리 위의 디렉토리 구조에서 파생됨. &lt;br /&gt; Ex.&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;work/code/_posts/2022-03-07-Jekyll.md&lt;/code&gt;의 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;['work', 'code']&lt;/code&gt;임. &lt;br /&gt; 이 내용은 각 게시물의 머릿말에서 설정이 가능함.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.collection&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;해당 문서가 속한 컬렉션의 라벨. &lt;br /&gt; Ex. 게시물을 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;posts&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_puppies/rover.md&lt;/code&gt;의 파일 경로의 documents를 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;puppies&lt;/code&gt;를 말한다. &lt;br /&gt; 만약 컬렉션의 일부가 아니면, 빈 문자열이 반환됨&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.tags&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;게시물이 속한 태그의 리스트. 머릿말에서 설정 가능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.dir&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;source 디렉터리와 게시물 또는 페이지의 사이의 경로. 머릿말의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;permalink&lt;/code&gt; 변수 작성 시 재정의 가능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.name&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;게시물 또는 페이지의 파일명&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.path&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;원 게시물 또는 페이지의 경로. 머릿말에서 재정의 가능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.next&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.posts&lt;/code&gt;에서 현재 게시물의 다음 위치에 있는 게시물. 마지막 게시물에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil&lt;/code&gt;을 반환함&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.previous&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.posts&lt;/code&gt;에서 현재 게시물의 이전 위치에 있는 게시물. 첫 게시물에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil&lt;/code&gt;을 반환함&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;4-paginator&quot;&gt;4) Paginator&lt;/h3&gt;
+&lt;p&gt;|변수|설명|
+|–|–|
+|&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.page&lt;/code&gt;|현재 페이지의 번호|
+|&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.per_page&lt;/code&gt;| 페이지 당 게시물 수|
+|&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.posts&lt;/code&gt;|해당 페이지에서 사용 가능한 게시물|
+|&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.total_posts&lt;/code&gt;|전체 게시물의 번호|
+|&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.total_pages&lt;/code&gt;|전체 페이지의 번호|
+|&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.previous_page&lt;/code&gt;|이전 페이지의 번호 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil&lt;/code&gt;(만약 이전 페이지가 없다면)|
+|&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.previous_page_path&lt;/code&gt;|이전 페이지의 경로 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil&lt;/code&gt;(만약 이전 페이지가 없다면)|
+|&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.next_page&lt;/code&gt;|다음 페이지의 번호 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil&lt;/code&gt;(만약 다음 페이지가 없다면)|
+|&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginator.next_page_path&lt;/code&gt;|다음 페이지의 경로 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil&lt;/code&gt;(만약 다음 페이지가 없다면)|&lt;/p&gt;
+
+&lt;h3 id=&quot;--참고-사이트&quot;&gt;- 참고 사이트&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/variables/&quot;&gt;Jekyll Variables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Park Seon Ik</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Jeykll" />
+      
+
+      
+        <summary type="html">- 변수 Jekyll에서 머리말이 있는 모든 파일은 Jekyll의 처리 대상이 된다. 이후 이러한 각 파일에 대해 Jekyll은 Liquid를 통해 다양한 데이터를 사용가능하게 한다. 아래의 내용은 Jekyll 변수 에 관한 내용을 해석하여 필자가 재구성하였습니다.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">Github Blog 시작기 3 - Directory Structure</title>
+      <link href="https://parksimis.github.io/Jekyll_directory_structure" rel="alternate" type="text/html" title="Github Blog 시작기 3 - &lt;br&gt; Directory Structure" />
+      <published>2022-03-17T00:00:00+00:00</published>
+      <updated>2022-03-17T00:00:00+00:00</updated>
+      <id>https://parksimis.github.io/Jekyll_directory_structure</id>
+      <content type="html" xml:base="https://parksimis.github.io/Jekyll_directory_structure">&lt;h2 id=&quot;--directory-structure디렉토리-구조&quot;&gt;- Directory Structure(디렉토리 구조)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll의 디렉토리 구조는 아래와 같이 구성된다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;Jekyll documentation&lt;/a&gt; 의 내용을 해석하여 필자가 재구성함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기본 Jekyll 실행 시 Directory Structure
+    &lt;div class=&quot;language-posh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config.yml&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_data&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;members.yml&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_drafts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin-with-the-crazy-ideas.md&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on-simplicity-in-technology.md&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;footer.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_layouts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;posts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;2007-10-29-why-every-programmer-should-play-nethack.md&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2009&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04-26-barcamp-boston-4-roundup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;md&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_base.scss&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout.scss&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_site&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;jekyll-cache&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;       &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Cache&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;           &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;jekyll-metadata&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# can also be an 'index.md' with valid front matter&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;File/Directory 목록
+    &lt;ul&gt;
+      &lt;li&gt;실제 파일은 더 많지만 필자가 실제로 사용 및 활용한 폴더 및 파일만 기술하였음.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;FILE/DIRECTORY&lt;/th&gt;
+      &lt;th&gt;DESCRIPTION&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;설정 정보를 저장하는 파일. yml 파일로 되어 있고, 이름, url 주소, 언어 등 다양한 정보를 command line 형태로 입력할 수 있지만, yml 형식으로 작성되어 구분이 편하다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_drafts&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;작성 중인 글을 위한 폴더. 날짜 형식이 붙을 필요가 없음.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;재사용을 위해 레이아웃이나 게시물에 포함시킬 수 있는 파일들을 저장하는 폴더 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{% include file.ext %}&lt;/code&gt;를 사용해 레이아웃 등에 불러와 사용 가능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;게시물을 래핑하는 템플릿을 저장하는 폴더. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt;라는 이름의 기본 템플릿이 존재하고, 필요에 따라 상속하여 다른 레이아웃을 만듦.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;작성 post를 저장하는 공간으로 파일은 다음과 같은 명명 규칙을 가져야 한다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;사이트 생성 시 사용하는 부가적인 데이터를 저장하는 공간. 기본 변수, Liquid Template system뿐만 아니라 자신만의 데이터도 정의 가능 &lt;br /&gt; 이 공간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yaml, yml, json, csv, tsv&lt;/code&gt; 파일로부터만 데이터를 읽어들일 수 있음.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Jekyll이 변환 완료 시 생성 사이트가 기본적으로 배치되는 위치&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;1-configuration&quot;&gt;1) Configuration&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll은 사이트 개인화를 위해 유동성을 제공하는데, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.toml&lt;/code&gt; 파일을 활용으로 가능하다.&lt;/li&gt;
+  &lt;li&gt;기본 구성, Environments, Markdown Options, Liquid Option 등 여러 옵션을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yml&lt;/code&gt; 데이터 형식으로 작성하여 설정 가능
+    &lt;ul&gt;
+      &lt;li&gt;세부 내용은 &lt;a href=&quot;https://jekyllrb.com/docs/configuration/&quot;&gt;Documentation&lt;/a&gt; 을 참고&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-includes&quot;&gt;2) Includes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; 폴더에는 공통적으로 사용가능한 컴포넌트들을 만들어 놓고 page에 삽입하여 사용할 수 있다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include&lt;/code&gt; tag를 사용해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; 폴더에 저장된 다른 파일의 콘텐츠를 포함할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include footer.html %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;원하는 html 페이지에서 위의 코드를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; 폴더의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer.html&lt;/code&gt;을 찾아 내용을 삽입할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-1-참조-파일-includes&quot;&gt;2-1) 참조 파일 Includes&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include_relative&lt;/code&gt; 태그를 사용하여 현재 파일과 관련된 참조 파일을 불러와 사용할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include_relative somedir/footer.html %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;위의 코드를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;폴더 이외의 폴더에 있는 html 파일을 불러와 사용할 수 있다.
+    &lt;ul&gt;
+      &lt;li&gt;그러나 참조 위치는 해당 파일의 상대적이므로 주의해야 한다.&lt;/li&gt;
+      &lt;li&gt;예를 들어, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_post/2014-09-03-my-file.markdown&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include_relative&lt;/code&gt; 태그를 사용한다면, 그 파일은 반드시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_post&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_post&lt;/code&gt;폴더의 하위 폴더에 위치해야 함.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;../&lt;/code&gt;를 사용해 상위 폴더의 위치를 참조할 수 없다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-data-files&quot;&gt;3) Data Files&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll에서 사용 가능한 내장변수와 &lt;a href=&quot;https://github.com/Shopify/liquid/wiki/Liquid-for-Designers&quot;&gt;Liquid templating system&lt;/a&gt; 을 통해 사용자 지정 데이터를 지정할 수 있다.&lt;/li&gt;
+  &lt;li&gt;이를 통해 템플릿에서 반복을 방지하고, 수정 없이 사이트별로 옵션을 설정할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3-1-data-folders&quot;&gt;3-1) Data Folders&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data&lt;/code&gt;폴더는 Jeykll이 사이트를 생성할 때 사용할 추가 데이터를 저장하는 곳이다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YAML, JSON, CSV, TSV&lt;/code&gt;를 확장자로 갖는 파일들만 액세스할 수 있다.
+    &lt;ul&gt;
+      &lt;li&gt;CSV와 TSV 파일은 헤더 행이 포함되어야 함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;ex-author-정보-추가&quot;&gt;Ex. Author 정보 추가&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;예를 들어 페이지에 반복되어 사용될 Author의 정보를 포함하고 싶다면 아래의 루트에 해당 내용을 추가할 수 있다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/authors.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;parksimis &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Park Seon Ik&lt;/span&gt;      
+  &lt;span class=&quot;na&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;parksimis&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;examplemember&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;examplemember&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;examplegithubrepo&lt;/span&gt;
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;위의 데이터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.data.authors&lt;/code&gt;로 액세스가 가능함.
+    &lt;ul&gt;
+      &lt;li&gt;파일의 이름이 변수 이름을 결정하기 때문에, 동일한 디렉토리에 같은 이름의 다른 확장자가 있지 않도록 조심해야 함.&lt;/li&gt;
+      &lt;li&gt;실제 필자의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post-card.html&lt;/code&gt;에서 사용되는 코드이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {% for author in site.data.authors %}
+    {% if author[1].username == post.author %}
+        {% if author[1].picture %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;author-profile-image&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.baseurl }}{{ author[1].picture }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ author[1].name }}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        {% endif %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-card-author&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.baseurl }}author/{{ post.author }}/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ author[1].name }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    {% endif %}
+{% endfor %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-2-하위-폴더&quot;&gt;3-2) 하위 폴더&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터 파일은 폴더의 하위 폴더에 배치가 가능함.&lt;/li&gt;
+  &lt;li&gt;각 폴더의 레벨은 변수의 namespace에 추가됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;ex-조직-정보-추가&quot;&gt;Ex. 조직 정보 추가&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/datafiles/&quot;&gt;Jekyll Docs&lt;/a&gt; 에 소개된 하위폴더 예시를 활용해 이해해보자.
+    &lt;ul&gt;
+      &lt;li&gt;Github 조직이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;orgs&lt;/code&gt; 폴더 아래의 파일에서 어떻게 별도로 정의할 수 있는지 하위 폴더로 진행하는 예시이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;1) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/orgs/jekyll.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Jekyll&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;members&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Tom Preston-Werner&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mojombo&lt;/span&gt;
+
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Parker Moore&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;parkr&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/orgs/doeorg.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;doeorg&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Doe Org&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;members&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;John Doe&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jdoe&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;위와 같은 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.data.orgs&lt;/code&gt;를 통해 조직에, 각 파일 이름으로 각각에 액세스할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+{% for org_hash in site.data.orgs %}
+{% assign org = org_hash[1] %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://github.com/{{ org.username }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {{ org.name }}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    ({{ org.members | size }} members)
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+{% endfor %}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-posts&quot;&gt;4) Posts&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;블로그 게시물을 텍스트 파일로 작성하면, Jekyll이 이를 변환하여 사이트에 제공함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4-1-게시물-폴더&quot;&gt;4-1) 게시물 폴더&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;블로그 포스트는 기본적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_post&lt;/code&gt; 폴더에 저장함.&lt;/li&gt;
+  &lt;li&gt;일반적으로 포스트들은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Markdown&lt;/code&gt; 형식으로 작성하고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTML&lt;/code&gt;도 지원함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4-2-게시물-작성&quot;&gt;4-2) 게시물 작성&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;게시물을 작성하기 위해서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_post&lt;/code&gt; 폴더에 아래의 형식을 맞춰주어야 함.
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;YEAR-MONTH-DAY-title.MARKUP
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2022-03-07-Jekyll.md
+2022-03-11-Jekyll_Syntax.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위와 같은 형식을 지켜주어야 한다.&lt;/li&gt;
+  &lt;li&gt;모든 블로그 포스트 파일은 일반적으로 레이아웃이나 기타 메타 데이터를 설정하는 머리말로 시작하게 된다.&lt;/li&gt;
+  &lt;li&gt;아래의 예시와 같은 형식이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;assets/built/images/locked.jpg&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;navigation&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;True&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Github Blog 시작기 - basic&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2021-03-16 16:40:00&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Jeykll&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post-template&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;subclass&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;tag-Jekyll'&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Park Seon Ik&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Park Seon Ik</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Jeykll" />
+      
+
+      
+        <summary type="html">- Directory Structure(디렉토리 구조) Jekyll의 디렉토리 구조는 아래와 같이 구성된다. Jekyll documentation 의 내용을 해석하여 필자가 재구성함. 기본 Jekyll 실행 시 Directory Structure . ├── _config.yml ├── _data │ └── members.yml ├── _drafts │ ├── begin-with-the-crazy-ideas.md │ └── on-simplicity-in-technology.md ├── _includes │ ├── footer.html │ └── header.html ├── _layouts │ ├── default.html │ └── post.html ├── _posts │ ├── 2007-10-29-why-every-programmer-should-play-nethack.md │ └── 2009-04-26-barcamp-boston-4-roundup.md ├── _sass │ ├── _base.scss │ └── _layout.scss ├── _site ├── .jekyll-cache │ └── Jekyll │ └── Cache │ └── [...] ├── .jekyll-metadata └── index.html # can also be an 'index.md' with valid front matter</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">Github Blog 시작기 2 - syntax</title>
+      <link href="https://parksimis.github.io/Jekyll_Syntax" rel="alternate" type="text/html" title="Github Blog 시작기 2 - &lt;br&gt; syntax" />
+      <published>2022-03-11T00:00:00+00:00</published>
+      <updated>2022-03-11T00:00:00+00:00</updated>
+      <id>https://parksimis.github.io/Jekyll_Syntax</id>
+      <content type="html" xml:base="https://parksimis.github.io/Jekyll_Syntax">&lt;h2 id=&quot;1-syntax-highlighting&quot;&gt;1. Syntax Highlighting&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;코드 가독성과 깔끔한 Code block을 위하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rouge&lt;/code&gt;의 syntax-highlighter를 설치 및 사용하고자 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-1-rouge란&quot;&gt;1-1) rouge란&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rouge-ruby/rouge&quot;&gt;Rouge-ruby Repo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Rouge는 pure Ruby syntax highlighter이다.&lt;/li&gt;
+  &lt;li&gt;Rouge는 가장 대표적으로 사용되는 Ruby 라이브러리임.
+    &lt;ul&gt;
+      &lt;li&gt;Jekyll에서는 기본적인 syntax 하이라이터로 사용되고, 기본적으로 Rouge는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{% highlight %}&lt;/code&gt;  템플릿 태그에 wrapping하여 사용함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jekyll은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rouge&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pygments&lt;/code&gt; 두 가지의 Syntax Highlighter를 제공했었는데, Jekyll 3 이후부터 Pygments는 지원하지 않음.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers&quot;&gt;홈페이지&lt;/a&gt;를 통해 지원 언어 목록 확인 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-2-rouge-설치&quot;&gt;1-2) rouge 설치&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;을 확인해보면 highlighter가 rouge로 설정이 잡혀있음. 
+&lt;br /&gt;
+&lt;img src=&quot;assets/built/images/20220310_01.png&quot; alt=&quot;Rouge 설정&quot; /&gt;
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;실제 설치는 아직 안했으므로, gem을 이용해 rouge를 설치해줘야 함.&lt;/li&gt;
+  &lt;li&gt;Ruby 실행 후 해당 블로그 폴더로 이동 아래 코드 입력
+    &lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rouge&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;assets/built/images/20220310_02.png&quot; alt=&quot;Rouge 설정&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위와 같은 결과 화면이 나오면 설치 성공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--스타일-확인하기&quot;&gt;- 스타일 확인하기&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rougify help style&lt;/code&gt; 명령어를 통해 rouge에서 제공하는 code snippet의 스타일을 확인할 수 있다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;available&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;themes:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.monokai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.monokai.dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.monokai.light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.solarized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.solarized.dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;base16.solarized.light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gruvbox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gruvbox.dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gruvbox.light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;igorpro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;magritte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;molokai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;monokai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;monokai.sublime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pastie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;thankful_eyes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tulip&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;현재 rouge는 위와 같은 스타일들을 제공함.
+    &lt;ul&gt;
+      &lt;li&gt;각 테마들을 미리보기하고 싶으면 &lt;a href=&quot;https://spsarolkar.github.io/rouge-theme-preview/&quot;&gt;홈페이지&lt;/a&gt;에서 확인 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;필자는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;monokai.sublime&lt;/code&gt;을 사용하기로 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--스타일시트-생성하기&quot;&gt;- 스타일시트 생성하기&lt;/h3&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;rougify&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;monokai.sublime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assets/css/syntax.css&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;위의 명령어로 “assets/css/syntax.css” 위치에 monokai.sublime의 css 파일을 생성할 수 있음.(기존에 있는 경우 덮어쓰기 됨)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--스타일-적용하기&quot;&gt;- 스타일 적용하기&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;스타일을 적용하기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/default.html&lt;/code&gt; 파일에 해당 css 파일 링크를 연결해주어야 함.
+    &lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Styles&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'n'&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Scripts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/assets/built/screen.css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/assets/built/screen.edited.css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/assets/built/syntax.css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;highlight.js&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;해당 파일에 syntax.css를 연결해주어야 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-오류-해결&quot;&gt;2. 오류 해결&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;해당 post를 테스트하려고 실행 명령어를 입력한 결과 아래와 같은 오류가 발생했다. &lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Liquid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Syntax&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Error&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'highlight'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parsing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;following&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;markup: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Valid&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;syntax: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;highlight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linenos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;WU736BV&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Desktop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parksimis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_posts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2022&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Jekyll_Syntax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;md&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ruby26&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x64&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;highlight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:in&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`initialize': Syntax Error in tag 'highlight' while parsing the following markup: (SyntaxError)
+
+Valid syntax: highlight &amp;lt;lang&amp;gt; [linenos]
+     &amp;lt;중략&amp;gt;
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;엄청난 삽질 끝에 위에 템플릿 태그로 인한 오류인 것을 알게 되었다.&lt;/li&gt;
+  &lt;li&gt;code block 처리하더라도 템플릿 태그로 인식하는 것 같다.&lt;/li&gt;
+  &lt;li&gt;이 경우 앞에 각 코드 시작의 처음과 끝에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{% raw %}&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{% endraw %}&lt;/code&gt;의 liquid tag를 붙여주어 해당 내용을 파싱하지 않도록 처리해주어야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-마무리&quot;&gt;3. 마무리&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Rouge를 설치하여 syntax highlight를 변경하는 방법을 학습하였다.&lt;/li&gt;
+  &lt;li&gt;과정은 순탄했으나, 사소한 오류 하나로 오랜 삽질을 경험했다.
+    &lt;ul&gt;
+      &lt;li&gt;그래도 확실하게 배운 것 같아서 기분이 좋다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--참고-사이트&quot;&gt;- 참고 사이트&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://moon9342.github.io/jekyll-rouge&quot;&gt;moon9342님 Gitblog - Rouge 이용 가이드&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hard-carry.com/how-to-change-syntax-highlighter-in-jekyll/&quot;&gt;Syntax 테마 설정&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Park Seon Ik</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Jeykll" />
+      
+
+      
+        <summary type="html">1. Syntax Highlighting 코드 가독성과 깔끔한 Code block을 위하여 rouge의 syntax-highlighter를 설치 및 사용하고자 한다.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">Github Blog 시작기 1 - basic</title>
+      <link href="https://parksimis.github.io/Jekyll" rel="alternate" type="text/html" title="Github Blog 시작기 1 - &lt;br&gt; basic" />
+      <published>2022-03-07T00:00:00+00:00</published>
+      <updated>2022-03-07T00:00:00+00:00</updated>
+      <id>https://parksimis.github.io/Jekyll</id>
+      <content type="html" xml:base="https://parksimis.github.io/Jekyll">&lt;h1 id=&quot;1-jekyll이란&quot;&gt;1. Jekyll이란?&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll은 Templates, partials, liquid code, markdown 등과 같은 동적 구성 요소에서 정적 웹 사이트를 구축하는 데 사용되는 Ruby 기반의 Parsing Engine
+    &lt;ul&gt;
+      &lt;li&gt;Jekyll은 Parsing Engine으로 컨텐츠 제공하지 않으며, 템플릿이나 디자인 요소도 없음.(직접 만들어야 함)&lt;/li&gt;
+      &lt;li&gt;Jekyll은 정적 웹사이트를 제공함. -&amp;gt; 동적 X
+        &lt;ul&gt;
+          &lt;li&gt;각 요청에 대해 컨텐츠, 템플릿 및 태그를 구문 분석 작업을 미리 한 번 수행하고 전체 웹사이트를 폴더에 캐시하여 정적으로 제공함.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Github pages에서 무료로 호스팅 할 수 있음.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-jekyll-설치-방법&quot;&gt;2. Jekyll 설치 방법&lt;/h2&gt;
+&lt;h2 id=&quot;1-ruby-설치&quot;&gt;1) Ruby 설치&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll은 Ruby 기반이므로 Ruby 개발환경이 필요함.&lt;/li&gt;
+  &lt;li&gt;Ruby는 각 운영체제별로 설치 방법이 다르므로 주의&lt;/li&gt;
+  &lt;li&gt;필자는 Windows로 Window 설치 방법을 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-1-설치-파일-다운로드&quot;&gt;1-1) 설치 파일 다운로드&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;윈도우 OS의 경우 Ruby와 Devkit(개발툴킷)을 별도로 설치해줘야하므로, &lt;a href=&quot;https://rubyinstaller.org/downloads/&quot;&gt;Ruby 설치 홈페이지&lt;/a&gt; 에서 Devkit이 포함된 버전 다운로드
+    &lt;ul&gt;
+      &lt;li&gt;필자의 경우 현 시점에서 가장 최신 버전인 Ruby+Devkit3.1.1-1(x64) 다운로드&lt;/li&gt;
+      &lt;li&gt;해당 설치 파일 실행 후 Next만 눌러 모두 Default 값으로 설치하면 됨.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-2-기본-세팅&quot;&gt;1-2) 기본 세팅&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;아래 그림과 같이 윈도우 시작 창에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Start Command Prompt with Ruby&lt;/code&gt;를 실행&lt;br /&gt;
+&lt;img src=&quot;../assets/built/images/20220307_01.png&quot; alt=&quot;Start Command Prompt with Ruby&quot; /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;실행 후 가장 먼저 프롬프트에서 인코딩을 부여하기 위한 명령어로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chcp 65001&lt;/code&gt; 실행
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;Active code page: 65001
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;위와 같은 결과가 나오면 완료&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundler&lt;/code&gt; 설치하기
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;gem install bundler
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위의 code를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundler&lt;/code&gt;를 설치할 수 있음.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;bundler는 Ruby App이 사용하는 gem의 dependecy를 관리하여 Ruby App 개발을 위한 일관된 환경을 제공할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;실행
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위 명령어로 Jekyll 실행이 가능함 &lt;br /&gt;
+&lt;img src=&quot;../assets/built/images/20220307_02.png&quot; alt=&quot;bundle exec jekyll serve&quot; /&gt; &lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;이와 같은 메시지가 나오면 정상 작동 완료&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;127.0.0.1:4000/jasper2//&lt;/code&gt;로 접속하면 테마 페이지 확인 가능&lt;/li&gt;
+      &lt;li&gt;터미널에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl + C&lt;/code&gt;를 누르면 Terminate 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-3-추가-설치&quot;&gt;1-3) 추가 설치&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;필자의 경우 현 시점 가장 최신 환경인 Ruby 3.x 버전으로 설치하여 실행시 오류가 발생함.&lt;/li&gt;
+  &lt;li&gt;최신 버전으로 Ruby를 설치하여 실행하시는 분들을 위해 아래에 발생한 오류와 해결 방법을 공유합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;error-1-could-not-locate-gemfile&quot;&gt;Error 1) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Could not locate Gemfile&lt;/code&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;현 Theme에서는 Gemfile이 포함되어 있어 오류 발생하지 않았지만, 이전 Theme에서 Gemfile이 포함되지 않아 오류가 발생한 경우가 있었음.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;--해결&quot;&gt;- 해결&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;bundle 관련 명령문을 실행했을 때, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Could not locate Gemfile&lt;/code&gt; 와 같은 결과가 나오고 설치가 안된다면 Gemfile init을 해주어야 함.
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;bundle init
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위와 같은 명령문으로 GEMFILE 생성 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;error-2-cannot-load-such-file----webrick&quot;&gt;Error 2) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cannot load such file -- webrick&lt;/code&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll 실행 후에 가장 먼저 맞닥뜨린 오류
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve/servlet.rb:3:in `require': cannot load such file -- webrick (LoadError)
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve/servlet.rb:3:in `&amp;lt;top (required)&amp;gt;'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:184:in `require_relative'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:184:in `setup'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:102:in `process'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:93:in `block in start'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:93:in `each'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:93:in `start'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/lib/jekyll/commands/serve.rb:75:in `block (2 levels) in init_with_program'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `block in execute'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `each'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `execute'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary/program.rb:42:in `go'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/mercenary-0.3.6/lib/mercenary.rb:19:in `program'
+      from C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-3.9.0/exe/jekyll:15:in `&amp;lt;top (required)&amp;gt;'
+      from C:/Ruby31-x64/bin/jekyll:25:in `load'
+      from C:/Ruby31-x64/bin/jekyll:25:in `&amp;lt;main&amp;gt;'
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위와 같은 오류가 발생하여 당황했지만, 읽어보니 LoadError로 Webrick을 로드할 수 없다는 내용이었음.
+    &lt;ul&gt;
+      &lt;li&gt;Ruby 3.x 버전부터 webrick이 빠진 채 설치된다고 함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;--해결-1&quot;&gt;- 해결&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;bundle add webrick
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+  &lt;li&gt;위와 같은 명령어로 webrick을 추가 설치 해줘야지 사용 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;error-3-cannot-load-kram-parser-gfm&quot;&gt;Error 3) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cannot load kram-parser-gfm&lt;/code&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Error 2와 동일한 이유로 kram-parser-gfm도 추가 설치해주어야 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;--해결-2&quot;&gt;- 해결&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;bundle add kramdown-parser-gfm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+  &lt;li&gt;위와 같은 명령어로 kramdown-parser-gfm을 추가 설치하여 해결&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;--기타&quot;&gt;- 기타&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;위와 같이 추가 라이브러리를 설치하고 Gemfile을 확인하면 해당 라이브러리들이 아래와 같이 자동으로 추가되는 것을 알 수 있다.
+    &lt;pre&gt;&lt;code class=&quot;language-commandline&quot;&gt;gem &quot;webrick&quot;, &quot;~&amp;gt; 1.7&quot;
+gem &quot;kramdown-parser-gfm&quot;, &quot;~&amp;gt; 1.1&quot;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;해당 Gemfile을 통해 Dependency를 관리할 수 있다.&lt;/li&gt;
+  &lt;li&gt;다른 폴더에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;을 통해 Gemfile의 내용을 자동으로 설치할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-마무리&quot;&gt;3. 마무리&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Github Blog 첫 도전을 위해 Jekyll과 Ruby 설치에 대해 공부하였다.&lt;/li&gt;
+  &lt;li&gt;아직 완벽하게 개념이 정립되지는 않지만, 지속적으로 관리하며 블로그를 다듬어봐야겠다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;--참고-사이트&quot;&gt;- 참고 사이트&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://martianlee.github.io/posts/jekyll-erro/&quot;&gt;Jekyll Error&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://moon9342.github.io/jekyll-start&quot;&gt;Jekyll Setting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Park Seon Ik</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Jeykll" />
+      
+
+      
+        <summary type="html">1. Jekyll이란? Jekyll은 Templates, partials, liquid code, markdown 등과 같은 동적 구성 요소에서 정적 웹 사이트를 구축하는 데 사용되는 Ruby 기반의 Parsing Engine Jekyll은 Parsing Engine으로 컨텐츠 제공하지 않으며, 템플릿이나 디자인 요소도 없음.(직접 만들어야 함) Jekyll은 정적 웹사이트를 제공함. -&amp;gt; 동적 X 각 요청에 대해 컨텐츠, 템플릿 및 태그를 구문 분석 작업을 미리 한 번 수행하고 전체 웹사이트를 폴더에 캐시하여 정적으로 제공함. Github pages에서 무료로 호스팅 할 수 있음.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Github Blog 시작기 2 - <br> syntax</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="선익 기술블로그" />
+    <link rel="shortcut icon" href="https://parksimis.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://parksimis.github.io/Jekyll_Syntax" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="선익 기술블로그" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Github Blog 시작기 2 - <br> syntax" />
+    <meta property="og:description" content="1. Syntax Highlighting 코드 가독성과 깔끔한 Code block을 위하여 rouge의 syntax-highlighter를 설치 및 사용하고자 한다. 1-1) rouge란 Rouge-ruby Repo Rouge는 pure Ruby syntax highlighter이다. Rouge는 가장 대표적으로 사용되는 Ruby 라이브러리임. Jekyll에서는 기본적인 syntax 하이라이터로 사용되고, 기본적으로 Rouge는 {% highlight %} 템플릿 태그에 wrapping하여 사용함. Jekyll은 rouge와 pygments 두 가지의 Syntax" />
+    <meta property="og:url" content="https://parksimis.github.io/Jekyll_Syntax" />
+    <meta property="og:image" content="https://parksimis.github.io/assets/built/images/Jekyll_Logo.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2022-03-11T00:00:00+00:00" />
+    <meta property="article:modified_time" content="2022-03-11T00:00:00+00:00" />
+    <meta property="article:tag" content="Jeykll" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Github Blog 시작기 2 - <br> syntax" />
+    <meta name="twitter:description" content="1. Syntax Highlighting 코드 가독성과 깔끔한 Code block을 위하여 rouge의 syntax-highlighter를 설치 및 사용하고자 한다. 1-1) rouge란 Rouge-ruby Repo Rouge는 pure Ruby syntax highlighter이다. Rouge는 가장 대표적으로 사용되는 Ruby 라이브러리임. Jekyll에서는 기본적인 syntax 하이라이터로 사용되고, 기본적으로 Rouge는 {% highlight %} 템플릿 태그에 wrapping하여 사용함. Jekyll은 rouge와 pygments 두 가지의 Syntax" />
+    <meta name="twitter:url" content="https://parksimis.github.io/" />
+    <meta name="twitter:image" content="https://parksimis.github.io/assets/built/images/Jekyll_Logo.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="선익 기술블로그" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Jeykll" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "선익 기술블로그",
+        "logo": "https://parksimis.github.io/"
+    },
+    "url": "https://parksimis.github.io/Jekyll_Syntax",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://parksimis.github.io/assets/built/images/Jekyll_Logo.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://parksimis.github.io/Jekyll_Syntax"
+    },
+    "description": "1. Syntax Highlighting 코드 가독성과 깔끔한 Code block을 위하여 rouge의 syntax-highlighter를 설치 및 사용하고자 한다. 1-1) rouge란 Rouge-ruby Repo Rouge는 pure Ruby syntax highlighter이다. Rouge는 가장 대표적으로 사용되는 Ruby 라이브러리임. Jekyll에서는 기본적인 syntax 하이라이터로 사용되고, 기본적으로 Rouge는 {% highlight %} 템플릿 태그에 wrapping하여 사용함. Jekyll은 rouge와 pygments 두 가지의 Syntax"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Github Blog 시작기 2 - <br> syntax" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://parksimis.github.io/">선익 기술블로그</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/Jekyll/">Jekyll</a></li>
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="/archive.html">All Posts</a>-->
+<!--    </li>-->
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="/author_archive.html">Tag별 Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-jeykll post tag-Jekyll ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2022-03-11">2022-03-11</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/jeykll/'>JEYKLL</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Github Blog 시작기 2 - <br> syntax</h1>
+            </header>
+<!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/Jekyll_Logo.png)">
+            </figure>
+            
+-->
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <h2 id="1-syntax-highlighting">1. Syntax Highlighting</h2>
+<ul>
+  <li>코드 가독성과 깔끔한 Code block을 위하여 <code class="language-plaintext highlighter-rouge">rouge</code>의 syntax-highlighter를 설치 및 사용하고자 한다.</li>
+</ul>
+
+<h3 id="1-1-rouge란">1-1) rouge란</h3>
+<ul>
+  <li><a href="https://github.com/rouge-ruby/rouge">Rouge-ruby Repo</a></li>
+  <li>Rouge는 pure Ruby syntax highlighter이다.</li>
+  <li>Rouge는 가장 대표적으로 사용되는 Ruby 라이브러리임.
+    <ul>
+      <li>Jekyll에서는 기본적인 syntax 하이라이터로 사용되고, 기본적으로 Rouge는 <code class="language-plaintext highlighter-rouge">{% highlight %}</code>  템플릿 태그에 wrapping하여 사용함.</li>
+    </ul>
+  </li>
+  <li>Jekyll은 <code class="language-plaintext highlighter-rouge">rouge</code>와 <code class="language-plaintext highlighter-rouge">pygments</code> 두 가지의 Syntax Highlighter를 제공했었는데, Jekyll 3 이후부터 Pygments는 지원하지 않음.</li>
+  <li><a href="https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers">홈페이지</a>를 통해 지원 언어 목록 확인 가능</li>
+</ul>
+
+<h3 id="1-2-rouge-설치">1-2) rouge 설치</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_config.yml</code>을 확인해보면 highlighter가 rouge로 설정이 잡혀있음. 
+<br />
+<img src="assets/built/images/20220310_01.png" alt="Rouge 설정" />
+<br /></li>
+  <li>실제 설치는 아직 안했으므로, gem을 이용해 rouge를 설치해줘야 함.</li>
+  <li>Ruby 실행 후 해당 블로그 폴더로 이동 아래 코드 입력
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">rouge</span><span class="w">
+</span></code></pre></div>    </div>
+    <p><img src="assets/built/images/20220310_02.png" alt="Rouge 설정" />
+<br /></p>
+  </li>
+  <li>위와 같은 결과 화면이 나오면 설치 성공</li>
+</ul>
+
+<h3 id="--스타일-확인하기">- 스타일 확인하기</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">rougify help style</code> 명령어를 통해 rouge에서 제공하는 code snippet의 스타일을 확인할 수 있다.</li>
+  <li>
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">available</span><span class="w"> </span><span class="nx">themes:</span><span class="w">
+  </span><span class="n">base16</span><span class="p">,</span><span class="w"> </span><span class="nx">base16.dark</span><span class="p">,</span><span class="w"> </span><span class="nx">base16.light</span><span class="p">,</span><span class="w"> </span><span class="nx">base16.monokai</span><span class="p">,</span><span class="w"> </span><span class="nx">base16.monokai.dark</span><span class="p">,</span><span class="w"> </span><span class="nx">base16.monokai.light</span><span class="p">,</span><span class="w"> </span><span class="nx">base16.solarized</span><span class="p">,</span><span class="w"> </span><span class="nx">base16.solarized.dark</span><span class="p">,</span><span class="w"> </span><span class="nx">base16.solarized.light</span><span class="p">,</span><span class="w"> 
+  </span><span class="n">bw</span><span class="p">,</span><span class="w"> </span><span class="nx">colorful</span><span class="p">,</span><span class="w"> </span><span class="nx">github</span><span class="p">,</span><span class="w"> </span><span class="nx">gruvbox</span><span class="p">,</span><span class="w"> </span><span class="nx">gruvbox.dark</span><span class="p">,</span><span class="w"> </span><span class="nx">gruvbox.light</span><span class="p">,</span><span class="w"> </span><span class="nx">igorpro</span><span class="p">,</span><span class="w"> </span><span class="nx">magritte</span><span class="p">,</span><span class="w"> </span><span class="nx">molokai</span><span class="p">,</span><span class="w"> </span><span class="nx">monokai</span><span class="p">,</span><span class="w"> </span><span class="nx">monokai.sublime</span><span class="p">,</span><span class="w"> </span><span class="nx">pastie</span><span class="p">,</span><span class="w"> </span><span class="nx">thankful_eyes</span><span class="p">,</span><span class="w"> </span><span class="nx">tulip</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>현재 rouge는 위와 같은 스타일들을 제공함.
+    <ul>
+      <li>각 테마들을 미리보기하고 싶으면 <a href="https://spsarolkar.github.io/rouge-theme-preview/">홈페이지</a>에서 확인 가능</li>
+    </ul>
+  </li>
+  <li>필자는 <code class="language-plaintext highlighter-rouge">monokai.sublime</code>을 사용하기로 함.</li>
+</ul>
+
+<h3 id="--스타일시트-생성하기">- 스타일시트 생성하기</h3>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rougify</span><span class="w"> </span><span class="nx">style</span><span class="w"> </span><span class="nx">monokai.sublime</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="nx">assets/css/syntax.css</span><span class="w">
+</span></code></pre></div></div>
+<ul>
+  <li>위의 명령어로 “assets/css/syntax.css” 위치에 monokai.sublime의 css 파일을 생성할 수 있음.(기존에 있는 경우 덮어쓰기 됨)</li>
+</ul>
+
+<h3 id="--스타일-적용하기">- 스타일 적용하기</h3>
+<ul>
+  <li>스타일을 적용하기 위해 <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> 파일에 해당 css 파일 링크를 연결해주어야 함.
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&lt;</span><span class="o">!--</span><span class="w"> </span><span class="n">Styles</span><span class="s1">'n'</span><span class="nx">Scripts</span><span class="w"> </span><span class="o">--</span><span class="err">&gt;</span><span class="w">
+  </span><span class="err">&lt;</span><span class="n">link</span><span class="w"> </span><span class="nx">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"text/css"</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s2">"/assets/built/screen.css"</span><span class="w"> </span><span class="n">/</span><span class="err">&gt;</span><span class="w">
+  </span><span class="err">&lt;</span><span class="n">link</span><span class="w"> </span><span class="nx">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"text/css"</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s2">"/assets/built/screen.edited.css"</span><span class="w"> </span><span class="n">/</span><span class="err">&gt;</span><span class="w">
+  </span><span class="err">&lt;</span><span class="n">link</span><span class="w"> </span><span class="nx">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"text/css"</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s2">"/assets/built/syntax.css"</span><span class="w"> </span><span class="n">/</span><span class="err">&gt;</span><span class="w">
+  </span><span class="err">&lt;</span><span class="o">!--</span><span class="w"> </span><span class="n">highlight.js</span><span class="w"> </span><span class="o">--</span><span class="err">&gt;</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>해당 파일에 syntax.css를 연결해주어야 함.</li>
+</ul>
+
+<h2 id="2-오류-해결">2. 오류 해결</h2>
+<ul>
+  <li>해당 post를 테스트하려고 실행 명령어를 입력한 결과 아래와 같은 오류가 발생했다. <br /></li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Liquid</span> <span class="no">Exception</span><span class="p">:</span> <span class="no">Syntax</span> <span class="no">Error</span> <span class="k">in</span> <span class="n">tag</span> <span class="s1">'highlight'</span> <span class="k">while</span> <span class="n">parsing</span> <span class="n">the</span> <span class="n">following</span> <span class="ss">markup: </span><span class="no">Valid</span> <span class="ss">syntax: </span><span class="n">highlight</span> <span class="o">&lt;</span><span class="n">lang</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">linenos</span><span class="p">]</span> <span class="k">in</span> <span class="no">C</span><span class="ss">:/</span><span class="no">Users</span><span class="o">/</span><span class="no">WU736BV</span><span class="o">/</span><span class="no">Desktop</span><span class="o">/</span><span class="n">parksimis</span><span class="p">.</span><span class="nf">github</span><span class="p">.</span><span class="nf">io</span><span class="o">/</span><span class="n">_posts</span><span class="o">/</span><span class="mi">2022</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="no">Jekyll_Syntax</span><span class="p">.</span><span class="nf">md</span>
+<span class="no">C</span><span class="ss">:/</span><span class="no">Ruby26</span><span class="o">-</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">ruby</span><span class="o">/</span><span class="n">gems</span><span class="o">/</span><span class="mf">2.6</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">gems</span><span class="o">/</span><span class="n">jekyll</span><span class="o">-</span><span class="mf">3.9</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">jekyll</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">highlight</span><span class="p">.</span><span class="nf">rb</span><span class="p">:</span><span class="mi">21</span><span class="ss">:in</span> <span class="sb">`initialize': Syntax Error in tag 'highlight' while parsing the following markup: (SyntaxError)
+
+Valid syntax: highlight &lt;lang&gt; [linenos]
+     &lt;중략&gt;
+
+</span></code></pre></div></div>
+
+<ul>
+  <li>엄청난 삽질 끝에 위에 템플릿 태그로 인한 오류인 것을 알게 되었다.</li>
+  <li>code block 처리하더라도 템플릿 태그로 인식하는 것 같다.</li>
+  <li>이 경우 앞에 각 코드 시작의 처음과 끝에 <code class="language-plaintext highlighter-rouge">{% raw %}</code> 와 <code class="language-plaintext highlighter-rouge">{% endraw %}</code>의 liquid tag를 붙여주어 해당 내용을 파싱하지 않도록 처리해주어야 한다.</li>
+</ul>
+
+<h2 id="3-마무리">3. 마무리</h2>
+<ul>
+  <li>Rouge를 설치하여 syntax highlight를 변경하는 방법을 학습하였다.</li>
+  <li>과정은 순탄했으나, 사소한 오류 하나로 오랜 삽질을 경험했다.
+    <ul>
+      <li>그래도 확실하게 배운 것 같아서 기분이 좋다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="--참고-사이트">- 참고 사이트</h3>
+<ul>
+  <li><a href="https://moon9342.github.io/jekyll-rouge">moon9342님 Gitblog - Rouge 이용 가이드</a></li>
+  <li><a href="https://hard-carry.com/how-to-change-syntax-highlighter-in-jekyll/">Syntax 테마 설정</a></li>
+</ul>
+
+                </div>
+            </section>
+
+<!--            &lt;!&ndash; Email subscribe form at the bottom of the page &ndash;&gt;-->
+<!--            -->
+<!--                <section class="subscribe-form">-->
+<!--                    <h3 class="subscribe-form-title">Subscribe to 선익 기술블로그</h3>-->
+<!--                    <p>Get the latest posts delivered right to your inbox</p>-->
+<!--                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->
+<!--                </section>-->
+<!--            -->
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/profile.jpg" alt="Park Seon Ik" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/Park Seon Ik">Park Seon Ik</a></h4>
+                                
+                                    <p>Ernst&Young Korea Delivery Service</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/Park Seon Ik">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            var this_page_url = 'https://parksimis.github.io/Jekyll_Syntax';
+                            var this_page_identifier = '/Jekyll_Syntax';
+                            var this_page_title = 'Github Blog 시작기 2 - <br> syntax';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/blog-cover.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; 선익 기술블로그 &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/jeykll/">Jeykll</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/Jekyll_tag">Github Blog 시작기 5 - <br> Tag와 Categories</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/Jekyll_variables">Github Blog 시작기 4 - <br> 변수</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/Jekyll_directory_structure">Github Blog 시작기 3 - <br> Directory Structure</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/jeykll/">
+                                
+                                    See all 4 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/Jekyll_directory_structure">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/Jekyll_Logo.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/Jekyll_directory_structure">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Jeykll</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Github Blog 시작기 3 - <br> Directory Structure</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>- Directory Structure(디렉토리 구조) Jekyll의 디렉토리 구조는 아래와 같이 구성된다. Jekyll documentation 의 내용을 해석하여 필자가 재구성함. 기본 Jekyll 실행 시 Directory Structure . ├── _config.yml ├── _data │ └── members.yml ├── _drafts</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/profile.jpg" alt="Park Seon Ik" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/Park Seon Ik/">Park Seon Ik</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      4 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/Jekyll">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/Jekyll_Logo.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/Jekyll">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Jeykll</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Github Blog 시작기 1 - <br> basic</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>1. Jekyll이란? Jekyll은 Templates, partials, liquid code, markdown 등과 같은 동적 구성 요소에서 정적 웹 사이트를 구축하는 데 사용되는 Ruby 기반의 Parsing Engine Jekyll은 Parsing Engine으로 컨텐츠 제공하지 않으며, 템플릿이나 디자인 요소도 없음.(직접</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/profile.jpg" alt="Park Seon Ik" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/Park Seon Ik/">Park Seon Ik</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      2 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://parksimis.github.io/">
+            
+            <span>선익 기술블로그</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Github Blog 시작기 2 - <br> syntax</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Github+Blog+%EC%8B%9C%EC%9E%91%EA%B8%B0+2+-+%3Cbr%3E+syntax&amp;url=https://parksimis.github.io/Jekyll_Syntax"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://parksimis.github.io/Jekyll_Syntax"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://parksimis.github.io/">선익 기술블로그</a> &copy; 2022</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to 선익 기술블로그</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
