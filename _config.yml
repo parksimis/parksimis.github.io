@@ -134,18 +134,12 @@ exclude:
   - Rakefile
   - Gemfile
   - Gemfile.lock
-  - changelog.md
+#  - changelog.md
   - "*.Rmd"
-  - vendor
-  - .travis.yml
-  - node_modules
-  - assets/css
-  - assets/images
-  - _posts/angular
-  - _posts/et-cetera
+#  - vendor
+#  - .travis.yml
+#  - node_modules
+#  - assets/css
+#  - assets/images
 #  - _posts/python
-  - _posts/typescript
 #  - _posts/Jekyll
-  - _posts/iot
-  - _posts/r
-  - _posts/economy
