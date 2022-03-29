@@ -26,14 +26,14 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{ page.date | date:'%Y-%m-%d' }}">{{ page.date | date:'%Y-%m-%d' }}</time>
+                    <time class="post-full-meta-date" datetime="{{ page.lfrpadate | date:'%Y-%m-%d' }}">{{ page.date | date:'%Y-%m-%d' }}</time>
                     {% if page.tags.size > 0 %}
                         <span class="date-divider">/</span>
                         {% for tag in page.tags %}
                             {% if forloop.index == page.tags.size %}
-                               <a href='{{ site.baseurl }}tag/{{ tag | slugify: "latin" }}/'>{{ tag | upcase }}</a>
+                               <a href='{{ site.baseurl }}tag/{{ tag | slugify: "latin" }}/' data-tag="{{tag}}">{{ tag | upcase }}</a>
                             {% else %}
-                               <a href='{{ site.baseurl }}tag/{{ tag | slugify: "latin" }}/'>{{ tag | upcase }}</a>,
+                               <a href='{{ site.baseurl }}tag/{{ tag | slugify: "latin" }}/' data-tag="{{tag}}">{{ tag | upcase }}</a>,
                             {% endif %}
                         {% endfor %}
                     {% endif %}

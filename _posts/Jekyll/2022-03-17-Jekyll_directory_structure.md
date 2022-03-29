@@ -5,7 +5,7 @@ cover:  assets/built/images/Jekyll_Logo.png
 navigation: True
 title: Github Blog 시작기 3 - <br> Directory Structure
 date: 2022-03-17
-tags: [Jeykll]
+tags: [Jekyll]
 class: post-template
 subclass: 'post tag-Jekyll'
 author: Park Seon Ik
