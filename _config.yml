@@ -10,6 +10,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 sass:
   sass_dir: _sass
 plainwhite:
+  remote_theme: samarsault/plainwhite-jekyll
   name: SeonIk Park
   tagline: Ernst&Young <br> Korea Delivery Service
   date_format: "%Y-%m-%d"
@@ -52,7 +53,7 @@ plainwhite:
 
 
 # Build settings
-remote_theme: samarsault/plainwhite-jekyll
+
 theme: plainwhite
 
 plugins:
