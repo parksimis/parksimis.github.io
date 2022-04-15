@@ -9,7 +9,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
   sass_dir: _sass
-remote_theme: samarsault/plainwhite-jekyll
+
 plainwhite:
   name: SeonIk Park
   tagline: Ernst&Young <br> Korea Delivery Service
@@ -55,6 +55,7 @@ plainwhite:
 # Build settings
 
 theme: plainwhite
+remote_theme: samarsault/plainwhite-jekyll
 
 plugins:
   - jekyll-seo-tag
