@@ -111,6 +111,7 @@ main {
     }
     img {
       max-width: 150px;
+      border-radius: 70%;
     }
     img.dark {
       display: none;
@@ -309,6 +310,7 @@ footer {
         margin-bottom: 10px;
         img {
           max-height: 40px;
+          border-radius: 70%;
         }
         h2 {
           margin: 0 10px;
@@ -333,4 +335,15 @@ footer {
     }
     border-top: 1px solid #eee;
   }
+}
+
+.post_li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+}
+
+.post-categories li:hover{
+  background: #2e2e38;
+  font-weight: bold;
+  color:  #ffe600;
 }
