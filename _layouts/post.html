@@ -11,7 +11,9 @@ layout: default
     {%- if page.categories.size > 0 -%}
     <ul class="post-categories">
       {%- for tag in page.categories -%}
-      <li>{{ tag }}</li>
+        {% if site.data.tags contains tag %}
+          <img class="tag" src="{{site.data.tags[tag]}}">
+        {% endif %}
       {%- endfor -%}
     </ul>
     {%- endif -%}

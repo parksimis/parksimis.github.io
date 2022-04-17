@@ -36,13 +36,11 @@ layout: default
           </div>
           {%- if post.categories.size > 0-%}
           <ul class="post-categories">
+
             {%- for tag in post.categories -%}
-              {% if tag == "Jekyll" %}
-                <img src="https://img.shields.io/badge/Jekyll-CC0000.svg?&style=for-the-badge&logo=Jekyll&logoColor=white">
-              {% elsif tag == "gh-pages" %}
-                <img src="https://img.shields.io/badge/GitHub Pages-222222.svg?&style=for-the-badge&logo=GitHub Pages&logoColor=white">
+              {% if site.data.tags contains tag %}
+                <img class="tag" src="{{site.data.tags[tag]}}">
               {% endif %}
-<!--            <li>{{ tag }}</li>-->
             {%- endfor -%}
           </ul>
           {%- endif -%}
