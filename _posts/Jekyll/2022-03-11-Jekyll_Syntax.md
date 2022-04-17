@@ -4,10 +4,6 @@ title:  "Jekyll Syntax"
 date:   2022-03-11
 categories: Jekyll gh-pages
 ---
-### Github 블로그 시작기 2
- 1. Syntax Highlighting
- 2. 오류 해결
- 3. 마무리
 
 ## 1. Syntax Highlighting
 * 코드 가독성과 깔끔한 Code block을 위하여 `rouge`의 syntax-highlighter를 설치 및 사용하고자 한다.

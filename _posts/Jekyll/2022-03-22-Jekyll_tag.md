@@ -5,10 +5,6 @@ date:   2022-03-22
 categories: Jekyll gh-pages
 ---
 
-### Github 블로그 시작기 5
- 1. Tags and Categories
- 1-1. Tags
- 1-2. Categories
 
 ## - Tags and Categories
 * Jeyll은 블로그 포스트의 `tags`와 `categories` 설정이 가능하다.

@@ -5,14 +5,6 @@ date:   2022-03-21
 categories: Jekyll gh-pages
 ---
 
-### Github 블로그 시작기 4
- 1. 변수
- 1-1. Global Variables
- 1-2. Site Variables
- 1-3. Page Variables
- 1-4. Paginator
- 
-
 ## - 변수
 * Jekyll에서 머리말이 있는 모든 파일은 Jekyll의 처리 대상이 된다. 이후 이러한 각 파일에 대해 Jekyll은 Liquid를 통해 다양한 데이터를 사용가능하게 한다.
 * 아래의 내용은 [Jekyll 변수](https://jekyllrb.com/docs/variables/) 에 관한 내용을 해석하여 필자가 재구성하였습니다.
@@ -68,6 +60,7 @@ categories: Jekyll gh-pages
 |`page.previous`|`site.posts`에서 현재 게시물의 이전 위치에 있는 게시물. 첫 게시물에서는 `nil`을 반환함|
 
 ### 4) Paginator
+
 |변수|설명|
 |--|--|
 |`paginator.page`|현재 페이지의 번호|

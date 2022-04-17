@@ -4,8 +4,6 @@ title:  "Jekyll Drafts"
 date:   2022-03-28
 categories: Jekyll gh-pages
 ---
-### > Github 블로그 시작기 6
- 1. Drafts
 
 ## - Drafts
 Drafts는 파일 이름에 일자가 없는 게시물이다. 다시 말해 아직 수정하고 있어서 publish하고 싶지 않은 게시물들을 말한다. <br>

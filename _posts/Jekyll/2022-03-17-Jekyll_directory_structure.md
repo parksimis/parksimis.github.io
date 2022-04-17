@@ -4,12 +4,6 @@ title:  "Jekyll Directory Structure"
 date:   2022-03-17
 categories: Jekyll gh-pages
 ---
-### Github 블로그 시작기 3
- 1. Directory Structure
- 1-1. Configuration
- 1-2. Includes
- 1-3. Data Files
- 1-4. Posts
 
 ## - Directory Structure(디렉토리 구조)
 * Jekyll의 디렉토리 구조는 아래와 같이 구성된다.
