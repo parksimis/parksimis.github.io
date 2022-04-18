@@ -9,10 +9,10 @@ show_excerpts: false # set to true to show excerpts on the homepage
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
   sass_dir: _sass
-
+google_analytics: G-166D00B7E1
 plainwhite:
   name: SeonIk Park
-  tagline: Ernst&Young <br> Korea Delivery Service
+  tagline: Ernst & Young <br> Korea Delivery Service
   date_format: "%Y-%m-%d"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar

@@ -1,6 +1,7 @@
 @import "ext/fonts";
 @import "ext/normalize";
 @import "syntax";
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
 
 $linkColor: #0a59b0;
 $mobileW: 768px;
@@ -15,7 +16,7 @@ $leftWidth: 220px;
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "NanumSquareRound", "Raleway", sans-serif;
   font-size: 16px;
   line-height: 1.2em;
   margin: 0;
@@ -165,7 +166,7 @@ main {
 
     a {
       display: block;
-      font-family: 'Merriweather';
+      font-family: "NanumSquareRound",'Merriweather';
       text-align: center;
       padding: 1rem 0;
       text-decoration: none;
@@ -244,7 +245,7 @@ main {
   padding-left: 30px;
 }
 .post {
-  font-family: "Merriweather", sans-serif;
+  font-family: "NanumSquareRound";
   font-weight: 300;
   color: #222;
   line-height: 1.9em;
@@ -265,7 +266,7 @@ main {
   h4,
   h5,
   h6 {
-    font-family: Raleway, sans-serif;
+    font-family: "NanumSquareRound", Raleway, sans-serif;
   }
 }
 .posts-labelgroup {
@@ -293,7 +294,7 @@ table {
   }
   th {
     background-color: #eee;
-    font-family: Raleway;
+    font-family: "NanumSquareRound", Raleway;
   }
 }
 
@@ -340,4 +341,16 @@ footer {
 .post_li {
   border-bottom: 1px solid #eee;
   padding: 20px;
+}
+
+.post_li:hover {
+  border-left: 6px solid #ffe600;
+  box-shadow: 5px 5px 5px 5px gray;
+  transform: translateX(10px);
+  transition: 0.8s;
+}
+
+.post_li:hover h2{
+  color: #ffe600;
+  font-weight: bold;
 }
