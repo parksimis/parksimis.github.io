@@ -36,10 +36,9 @@ layout: default
           </div>
           {%- if post.categories.size > 0-%}
           <ul class="post-categories">
-
             {%- for tag in post.categories -%}
-              {% if site.data.tags contains tag %}
-                <img class="tag" src="{{site.data.tags[tag]}}">
+              {% if site.data.tag_info contains tag %}
+                <img class="tag" src="{{site.data.tag_info[tag]}}">
               {% endif %}
             {%- endfor -%}
           </ul>
