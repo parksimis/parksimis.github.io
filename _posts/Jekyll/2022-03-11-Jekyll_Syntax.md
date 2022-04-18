@@ -19,14 +19,14 @@ categories: Jekyll gh-pages
 ### 1-2) rouge 설치
 * `_config.yml`을 확인해보면 highlighter가 rouge로 설정이 잡혀있음. 
 <br>
-![Rouge 설정](assets/built/images/20220310_01.png)
+![Rouge 설정]({{site.url}}/assets/images/20220310_01.png)
 <br>
 * 실제 설치는 아직 안했으므로, gem을 이용해 rouge를 설치해줘야 함.
 * Ruby 실행 후 해당 블로그 폴더로 이동 아래 코드 입력
 ```powershell
 gem install rouge
 ```
-![Rouge 설정](assets/built/images/20220310_02.png)
+![Rouge 설정]({{site.url}}/assets/images/20220310_02.png)
 <br>
 * 위와 같은 결과 화면이 나오면 설치 성공
 
