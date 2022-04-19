@@ -2,7 +2,8 @@
 layout: post
 title:  "Jekyll tag custom"
 date:   2022-04-18
-categories: Jekyll gh-pages
+tags: Jekyll gh-pages
+ctgry: 개발
 ---
 
 ## - Jekyll tag custom하기
@@ -51,7 +52,7 @@ categories: Jekyll gh-pages
 ### 2) 계획
 나름의 생각을 해본 결과, 이전 Github Profile에서 사용했던 Badge를 응용하여 꾸미기로 하였다. <br>
 Badge 는 [shields.io](https://shields.io/) 에서, 아이콘은 [Simple Icon](https://simpleicons.org/) 에서 사용하고 아이콘이 없는 경우에는 필자가 커스텀하여 사용하기로 하였다.<br>
-이전 [Directory Structure]({% post_url Jekyll/2022-03-17-Jekyll_directory_structure %})에서 학습했던 `_data` 폴더에 tag에 관한 정보(태그 이름, badge url)를 저장하고 각 post의 category에 맞는 badge url을 나란히 보여주는 형식으로 진행하려 한다. <br>
+이전 [Directory Structure]({% post_url 개발/Jekyll/2022-03-17-Jekyll_directory_structure %})에서 학습했던 `_data` 폴더에 tag에 관한 정보(태그 이름, badge url)를 저장하고 각 post의 category에 맞는 badge url을 나란히 보여주는 형식으로 진행하려 한다. <br>
 다음과 같은 순서로 작업 계획을 짰다.
 1. Badge 만들기
 2. `_data` 폴더에 tag 정보 저장하기

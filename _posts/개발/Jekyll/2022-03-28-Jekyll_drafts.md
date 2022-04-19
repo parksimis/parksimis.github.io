@@ -2,7 +2,8 @@
 layout: post
 title:  "Jekyll Drafts"
 date:   2022-03-28
-categories: Jekyll gh-pages 
+tags: Jekyll gh-pages 
+ctgry: 개발
 ---
 
 ## - Drafts

@@ -2,7 +2,8 @@
 layout: post
 title:  "Jekyll Variables"
 date:   2022-03-21
-categories: Jekyll gh-pages
+tags: Jekyll gh-pages
+ctgry: 개발
 ---
 
 ## - 변수

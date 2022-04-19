@@ -2,7 +2,8 @@
 layout: post
 title:  "Jekyll Directory Structure"
 date:   2022-03-17
-categories: Jekyll gh-pages
+tags: Jekyll gh-pages
+ctgry: 개발
 ---
 
 ## - Directory Structure(디렉토리 구조)

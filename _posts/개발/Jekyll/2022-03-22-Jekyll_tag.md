@@ -2,7 +2,8 @@
 layout: post
 title:  "Jekyll Tag"
 date:   2022-03-22
-categories: Jekyll gh-pages
+tags: Jekyll gh-pages
+ctgry: 개발
 ---
 
 

@@ -2,7 +2,8 @@
 layout: post
 title:  "Jekyll Syntax"
 date:   2022-03-11
-categories: Jekyll gh-pages
+tags: Jekyll gh-pages
+ctgry: 개발
 ---
 
 ## 1. Syntax Highlighting
