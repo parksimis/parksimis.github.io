@@ -350,7 +350,30 @@ footer {
   transition: 0.8s;
 }
 
-.post_li:hover h2{
+.post_li:hover h2, .post_li:hover .main_category{
   color: #ffe600;
   font-weight: bold;
+}
+
+.about-category, .about-category select {
+  width: 100%;
+  text-align: center;
+}
+.about-img{
+  width: 50%;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 30%);
+  margin-top: 5%;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 30%;
 }

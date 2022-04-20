@@ -27,7 +27,7 @@ layout: default
       <li class="post_li">
         {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
         {% if post.ctgry.size >0 %}
-            {{post.ctgry}}
+          <b class="main_category {{ctgry}}"> {{post.ctgry}} </b>
         {% endif %}
         <br>
         <a class="post-link" href="{{ post.url | relative_url }}">

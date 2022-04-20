@@ -159,6 +159,24 @@
           </label>
         </p>
       </div>
+      <div class="about-category">
+        <form>
+          <select>
+            <option>개발</option>
+          </select>
+        </form>
+      </div>
+      <div class="about-category">
+        {% if site.data.tag_info.size > 0 %}
+          <div class="wrapper">
+          {% for tag in site.data.tag_info %}
+<!--            <div style="float: left; width: 30%; height: 30px; margin-top: 10px;">-->
+                <div class="box {{tag[0]}}" data-tag="{{tag[0]}}" style="cursor:pointer;" onclick="tmp()">#{{tag[0]}}</div>
+<!--            </div>-->
+          {% endfor %}
+          </div>
+        {% endif %}
+      </div>
       {%- endif -%}
       {% endcapture %}
       {{ footer }}
@@ -187,6 +205,7 @@
   {% if site.plainwhite.search %}
   <script src="{{ "/assets/js/simple-jekyll-search.min.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/search.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/tag.js" | relative_url }}"></script>
   {% endif %}
 </body>
 
