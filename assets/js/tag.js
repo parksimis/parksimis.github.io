@@ -3,8 +3,10 @@
 function tmp(e){
     let dv = event.currentTarget;
     currentTag = dv.getAttribute("data-tag");
-    alert(currentTag);
-    filterByTagName(currentTag);
+    alert(dv);
+    var tmp = $(".post_li").getAttribute("post-jekyll");
+    alert(tmp);
+    // filterByTagName(currentTag);
 }
 
 $("[data-tag]").click((e) => {
@@ -16,7 +18,7 @@ $("[data-tag]").click((e) => {
 function filterByTagName(tagName) {
   $('.hidden').removeClass('hidden');
   $('.post_li').each((index, elem) => {
-    if (!elem.hasAttribute(`data-${tagName}`)) {
+    if (!elem.childNodes.hasAttribute(`data-${tagName}`)) {
       $(elem).addClass('hidden');
     }
   });
