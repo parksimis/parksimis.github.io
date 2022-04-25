@@ -372,8 +372,13 @@ footer {
 }
 
 .box {
-  background-color: #444;
-  color: #fff;
+  border: solid 1px black;
   border-radius: 5px;
   font-size: 30%;
+}
+
+.box:hover {
+  background-color: #2E2E38;
+  color: #DDC809;
+  font-weight: bold;
 }
