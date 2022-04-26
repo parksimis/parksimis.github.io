@@ -1,27 +1,20 @@
 // tag function
 
-function tmp(e){
+function tagFilter(){
     let dv = event.currentTarget;
-    currentTag = dv.getAttribute("data-tag");
-    alert(dv);
-    var tmp = $(".post_li").getAttribute("post-jekyll");
-    alert(tmp);
-    // filterByTagName(currentTag);
+    let currentTag = dv.getAttribute("data-tag");
+    // alert("currentTag : " + currentTag);
+    // $("img[post-tag=currentTag]").parents(".post_li").css("display", "none");
+    filterByTagName(currentTag);
 }
 
-$("[data-tag]").click((e) => {
-  // currentTag = e.target.dataset.tag;
-  window.alert(currentTag);
-  filterByTagName(currentTag);
-})
-
 function filterByTagName(tagName) {
-  $('.hidden').removeClass('hidden');
-  $('.post_li').each((index, elem) => {
-    if (!elem.childNodes.hasAttribute(`data-${tagName}`)) {
-      $(elem).addClass('hidden');
+    if (tagName == "All"){
+        // alert("ALL");
+        $(".post_li").css("display", "");
+    }else{
+        $(".post_li").css("display", "none");
+        $('img[post-tag='+tagName+']').parents(".post_li").css("display", "");
     }
-  });
-  $(`.tag`).removeClass('selected');
-  $(`.tag[data-tag=${tagName}]`).addClass('selected');
+
 }
