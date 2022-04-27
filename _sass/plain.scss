@@ -344,14 +344,14 @@ footer {
 }
 
 .post_li:hover {
-  border-left: 6px solid #ffe600;
+  border-left: 6px solid #DDC809;
   box-shadow: 5px 5px 5px 5px gray;
   transform: translateX(10px);
   transition: 0.8s;
 }
 
 .post_li:hover h2, .post_li:hover .main_category{
-  color: #ffe600;
+  color: #DDC809;
   font-weight: bold;
 }
 
@@ -378,6 +378,12 @@ footer {
 }
 
 .box:hover {
+  background-color: #2E2E38;
+  color: #DDC809;
+  font-weight: bold;
+}
+
+.clicked {
   background-color: #2E2E38;
   color: #DDC809;
   font-weight: bold;

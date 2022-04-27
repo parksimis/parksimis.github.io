@@ -2,12 +2,13 @@
 
 function tagFilter(){
     let dv = event.currentTarget;
+    $(".box").removeClass('clicked');
+    event.target.classList.add("clicked");
     let currentTag = dv.getAttribute("data-tag");
-    // alert("currentTag : " + currentTag);
-    // $("img[post-tag=currentTag]").parents(".post_li").css("display", "none");
     filterByTagName(currentTag);
 }
 
+// 선택된 태그에 따라 게시물을 Filtering
 function filterByTagName(tagName) {
     if (tagName == "All"){
         // alert("ALL");
@@ -16,5 +17,4 @@ function filterByTagName(tagName) {
         $(".post_li").css("display", "none");
         $('img[post-tag='+tagName+']').parents(".post_li").css("display", "");
     }
-
 }
