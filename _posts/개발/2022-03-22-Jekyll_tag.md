@@ -4,6 +4,7 @@ title:  "Jekyll Tag"
 date:   2022-03-22
 tags: Jekyll gh-pages
 ctgry: 개발
+excerpt: Jekyll의 Tag와 Categories와 둘의 차이점에 대해 알아본다.
 ---
 
 

@@ -4,6 +4,7 @@ title:  "Jekyll tag custom"
 date:   2022-04-18
 tags: Jekyll gh-pages
 ctgry: 개발
+excerpt: 기본 템플릿의 Tag Badge를 입맛에 맞게 커스텀한 방법에 대해서 알아본다.
 ---
 
 ## - Jekyll tag custom하기

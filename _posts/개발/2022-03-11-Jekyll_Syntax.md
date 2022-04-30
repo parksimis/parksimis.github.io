@@ -4,6 +4,7 @@ title:  "Jekyll Syntax"
 date:   2022-03-11
 tags: Jekyll gh-pages
 ctgry: 개발
+excerpt: Jekyll에서 rouge를 이용한 syntax highlighting 스타일 변경 방법에 대한 내용
 ---
 
 ## 1. Syntax Highlighting

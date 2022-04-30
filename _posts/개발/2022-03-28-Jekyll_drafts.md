@@ -4,6 +4,7 @@ title:  "Jekyll Drafts"
 date:   2022-03-28
 tags: Jekyll gh-pages 
 ctgry: 개발
+excerpt: Jekyll에서 초안을 관리할 수 있은 drafts에 대해서 알아본다.
 ---
 
 ## - Drafts

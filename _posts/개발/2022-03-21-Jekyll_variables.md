@@ -4,6 +4,7 @@ title:  "Jekyll Variables"
 date:   2022-03-21
 tags: Jekyll gh-pages
 ctgry: 개발
+excerpt: Jekyll에서 사용하는 변수의 종류와 내용에 대해서 소개한다.
 ---
 
 ## - 변수

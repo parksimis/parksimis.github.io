@@ -4,6 +4,7 @@ title:  "Jekyll Directory Structure"
 date:   2022-03-17
 tags: Jekyll gh-pages
 ctgry: 개발
+excerpt: Jekyll의 디렉토리 구조와 각 폴더별 상세 내용 
 ---
 
 ## - Directory Structure(디렉토리 구조)
