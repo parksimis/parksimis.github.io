@@ -170,13 +170,11 @@
       <div class="about-category">
         {% if site.data.tag_info.size > 0 %}
           <div class="wrapper">
-          <div class="box All" data-tag="All" style="cursor:pointer;" onclick="tagFilter()">#All</div>
-          {% for tag in site.data.tag_info %}
-<!--            <div style="float: left; width: 30%; height: 30px; margin-top: 10px;">-->
-                <div class="box {{tag[0]}}" data-tag="{{tag[0]}}" style="cursor:pointer;" onclick="tagFilter()">#{{tag[0]}}</div>
-<!--            </div>-->
-          {% endfor %}
-          </div>
+            <div class="box All" data-tag="All" style="cursor:pointer;" onclick="tagFilter()">#All</div>
+            {% for tag in site.data.tag_info %}
+                  <div class="box {{tag[0]}}" data-tag="{{tag[0]}}" style="cursor:pointer;" onclick="tagFilter()">#{{tag[0]}}</div>
+            {% endfor %}
+            </div>
         {% endif %}
       </div>
       {%- endif -%}
