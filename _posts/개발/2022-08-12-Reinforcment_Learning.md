@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Reinforcement Learning"
-date:   2022-05-01
+title:  "Reinforcement Learning 1"
+date: 2022-08-14
 tags: Python
 ctgry: 개발
-excerpt: 강화학습(Reinforcement Learning)에 대해서 정리한다.
+excerpt: 강화학습(Reinforcement Learning)의 개념 정리 1
 ---
 
 # 1. 강화학습(Reinforcement Learning)
 ## 1-1. 강화학습
-- 주어진 상황에서 어떠한 행동을 취할지를 학습하는 것을 의미.
+- 주어진 상황에서 어떠한 행동을 취할지를 학습하는 것을 의미함.
   - 행동의 결과는 최대한의 보상(또는 이득)을 가져다 주어야 하고, 그 보상 함수는 **수치적으로 표현될 수 있어야 한다.**
 - Agent(학습자)는 행동에 대한 지침없이 오로지 시행착오를 통해 최대 보상을 가져다주는 행동을 찾아내야 함.
 - **시행착오**와 **지연된 보상** 이라는 특성은 강화학습을 다른 방법과 구분하는 가장 중요한 두 가지 특성임.
@@ -67,3 +67,8 @@ excerpt: 강화학습(Reinforcement Learning)에 대해서 정리한다.
 모델은 계획(planning)을 위해 사용되는데, 여기서 계획은 미래 상황을 실제로 경험하기 전에 가능성만을 고려해 일련의 행동을 결정하는 방법을 의미함.
 모델과 계획을 사용하는 강화학습 문제는 model-based 방법이라하고 이에 반대되는 방법으로는 model-free 방법이 있다.
 
+
+#### - 출처
+[1] 책 | Sutton, Richard S., and Andrew G. Barto., 단단한 강화학습 : 강화학습 기본 개념을 제대로 정리한 인공지능 교과서, 제이펍, 2020
+[2] 블로그 | [카카오AI리포트]알파고를 탄생시킨 강화학습의 비밀, https://brunch.co.kr/@kakao-it/73
+[3] 논문 | Sutton, Richard S., and Andrew G. Barto. "Reinforcement learning: An introduction", Cambridge: MIT press, 1998. 
