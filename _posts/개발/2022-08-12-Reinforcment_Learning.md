@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Reinforcement Learning 1"
+title:  "Reinforcement Learning 1 - Reinforcement Learning"
 date: 2022-08-14
 tags: Python
 ctgry: 개발
-excerpt: 강화학습(Reinforcement Learning)의 개념 정리 1
+excerpt: 강화학습(Reinforcement Learning)의 개념 정리 1 (강화학습의 정의 및 구성요소)
 ---
 
 # 1. 강화학습(Reinforcement Learning)
